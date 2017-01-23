@@ -1,0 +1,225 @@
+/*CSS for all the webpages */
+
+
+/*-----------CSS Clear--------------*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*-----------taskbar----------------*/
+.taskbar {
+    width: 100%;
+    position: absolute;
+}
+
+.taskbar nav ul{
+    background-color: black;
+    text-align: center;
+/*    width: 100%;*/
+    border-top-style: solid;
+    border-top-color: #FFBA2A;
+    border-top-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: #FFBA2A;
+}
+
+.taskbar nav li{
+    width: 150px;
+    list-style: none;
+    text-align: center;
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.taskbar li a:link{
+    color: #FFBA2A;
+}
+
+.taskbar li a:visited{
+    color: #FFBA2A;
+}
+
+#login_trigger{
+    text-align: center;
+    top: 12%;
+    right: 30%;
+    position: absolute
+}
+
+/*----------------Headers----------*/
+
+h1{
+    font-size: 3em;
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    align-content: center;*/
+/*    justify-content: center; */
+    text-align: center;
+    color: black;
+}
+
+h3{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.Header{
+    padding-top: 80px;
+}
+
+
+
+/*----------------Body------------*/
+.article p{
+    text-align: left;
+    width: 800px;
+    margin: 0 auto;
+    line-height: 2;
+}
+
+body {
+    background-image: url('../pics/karatedojo.jpg');
+/*    background-attachment: fixed;*/
+}
+
+.wrapper1 {
+    background-color: white;
+    margin-left: 220px;
+    margin-right: 220px;
+}
+
+.wrapper2{
+    background-color: white;
+    margin-left: 220px;
+    margin-right: 220px;
+    margin-top: 90px;
+    height: 850px;
+}
+
+/*-----------------footer--------------
+/*fix*/
+footer{
+/*     margin-bottom: 100px; */
+/* 	display: inline-block; */
+    text-align: center;
+/*     clear: both; */
+	position: absolute; 
+/*	top: 800px;*/
+/*	bottom: 10;*/
+	width: 100%; 
+/*    margin-bottom: px;*/
+    border-top-color: #FFBA2A; 
+    border-top-width: 3px;
+    border-top-style: solid;
+    
+}
+
+footer li{
+    display: inline-block;
+    width: 150px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+/*     padding-right: 15px; */
+}
+
+footer li a:link{
+    color: #FFBA2A;
+}
+
+footer li a:visited{
+    color: #FFBA2A;
+}
+
+footer nav ul{
+    margin-top: 30px;
+    background-color: black;
+}
+
+
+
+
+/*------- specific contact/ contact page--------*/
+.me{
+    display: block;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.contact {
+    padding-bottom: 5px;
+}
+
+
+
+/*----------buttons ---------*/
+
+#kumitebutton{
+   
+    margin-bottom: 5px;
+    top: 25%;
+    right: 30%;
+    position: absolute;
+    
+}
+
+#katabutton{
+   margin-bottom: 5px;
+    top: 25%;
+    right: 30%;
+    position: absolute;
+}
+
+/*what is this linked to?*/
+#resetbutton{
+    margin-top: 10px;
+}
+
+.button {
+    background: #222;
+    display: inline-block;
+    padding: 5px 10px 6px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px #999;
+    text-shadow: 0 -1px 1px #222;
+    border-bottom: 1px solid #222;
+}
+
+.topbuttons {
+ margin-left: 4%;
+ margin-top: 6px; 
+}
+
+#resetscore {
+    position: absolute;
+    margin-left: 35%;
+    margin-top: 10px;
+}
+
+.centerbuttons {
+    align-content: center;
+    padding-top: 20px;
+    margin-left: 36%; 
+}
+
+#findwin {
+    margin-left: 30px;
+}
+
+#checkbox {}
+
+#checklable {}
+
+
+
+

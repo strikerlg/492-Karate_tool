@@ -1,0 +1,71 @@
+
+/*-------Kata Tables*/
+#katatable{
+    width: 90%;
+    border: solid black;
+    border-width: medium;
+    border-collapse: collapse;
+    margin-left: 60px;
+    margin-top: -10px;
+}
+
+ #katatable td, #katatable th{
+    border: solid black;
+    border-width: medium;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+
+/* ------kata winner outputs--------*/
+#winners {
+    padding-top: 20px;
+    width: 100%;
+    margin-left: 30%;
+    width: 600px;
+}
+
+#winners td{
+    border: solid black;
+    border-width: medium;
+    width: 20em;
+    height: 35px;
+}
+/*end of kata winner tables*/
+
+/*--------kumite tables-----*/
+#kumitetable{
+    width: 50%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#kumitetable td, #kumitetable th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+/*need input centered*/
+#kumitetable td input{
+}
+
+
+/*-------kumite winner outputs------- */
+#kuwinners {
+    padding-top: 20px;
+    width: 100%;
+}
+
+#kuwinners td{
+    border: 1px solid black;
+    width: 20em;
+    height: 35px;
+}
+
+/*end of kumite winner tables*/
+
+
+
+

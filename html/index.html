@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+<!--    work in progress-->
+    <script type="text/javascript" src="js/modal.js"> $("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--    -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/stylesheet.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/login.css"/>
+    <link rel="stylesheet" type="text/css" href="fonts/fonts.css"/>
+    <title>Home Page- Karate Utility</title>
+</head>
+
+<body>
+    <div class="wrapper1">
+    <h1>Karate Tournament Utility</h1>
+    </div>
+    
+<!--    work in progress-->
+<!--   this is the login form I am working on -->
+<!--    -->
+<!--    -->
+  
+    <a id="login_trigger" href="#login">admin login</a>
+    <form id="login" class="popupContainer" style="display:none;" action="php/login.php">
+        <header class="popupHeader">
+            <span class="header_title">Admin Login</span>
+            <span class="modal_close"><i class="fa fa-times"></i></span>
+        </header>
+        
+        <section class="popupBody">
+            <div class="user_login">
+            <form>
+                <label for="username">Username</label><input type="text"><br>
+                <label>Password</label><input type="password"><br> 
+                <div class="checkbox">
+                    <input id="remember" type="checkbox"><label for="remember">Remember me on this computer</label>
+                </div>
+                <div class="action_btns">
+                    <div class="one_half last">
+                        <a class="btn btn_red" href="#">Login</a>
+                    </div>
+                </div>
+            </form>
+            <a class="forgot_password"  href="#">Forgot password?</a>
+            </div>
+        </section>
+    </form>
+<!--    -->
+<!--    -->
+<!--    -->
+<!--    -->
+    
+    <div class="taskbar">
+        <nav>
+            <ul>
+                <li><a href="TKAcal.html">TKA Tournament</a></li>
+                <li><a href="PKCcal.html">PKC Tournament</a></li>
+                <li><a href="AAUcal.html">AAU Tournament</a></li>
+                <li><a href="Season.html">Season Rankings</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="wrapper2">
+    <h3 class="Header">What is the Karate Tournament Utility all about?</h3>
+    
+    <div class="article">
+        <p>
+            This Karate tournament utility was built to ease the process of a karate tournament. It aims to take out human error and making data storage a lot eaiser. System admins will be appointed to trained users in every dojo that ends up using this system. Every action will be tracked if data is tampered with. These sepcific people will be trained in how to work the website and enter data into the database. The utility is also for the public. With public use everything except for the entering of data will work. So, please enjoy, have fun, and train hard. If any questions need to be answered, there is a contact page in the taskbar to be able to get ahold of me.</p>
+    </div>
+    
+    <h3>To my Sensei</h3>
+    <img src="">
+    <div class="article">
+        <p>Above is my Sensei Mike C. Jones pinning one of his Ukes. My Sensei is one of the men I look up to in life and hope to take his life learning with me through life. I am dedicating this website to him, in promoting him and his Dojo. This man cannot only teach Karate, but many life lessons. So here Sensei, is a little piece my work dedicated to you.</p>
+    </div>
+    </div>
+        
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="http://www.tkasudo.com/">TKA Association</a></li>
+                <li><a href="http://pkchq.com/">PKC Association</a></li>
+                <li><a href="http://www.aaukarate.org/">AAU Association</a></li>   
+            </ul>
+        </nav>
+    </div>
+    </footer>
+</body>    
+</html>

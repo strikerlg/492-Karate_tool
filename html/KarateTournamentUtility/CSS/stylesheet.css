@@ -1,0 +1,282 @@
+/*CSS for all the webpages */
+/*find out how to get footer at bottom */
+
+/*-----------taskbar----------------*/
+
+.taskbar nav ul{
+    background-color: black;
+    text-align: center;
+    width: 100%;
+    
+}
+
+.taskbar nav li{
+    width: 150px;
+    list-style: none;
+    text-align: center;
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.taskbar li a:link{
+    color: white;
+}
+
+.taskbar li a:visited{
+    color: white;
+}
+
+/*----------------Headers----------*/
+
+h1{
+    font-size: 3em;
+    height: 1em;
+    display: flex;
+    align-content: center;
+    justify-content: center; 
+}
+
+h3{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.Srank{
+    text-decoration: underline;
+}
+
+/*----------------Body------------*/
+.article p{
+    text-align: left;
+    width: 800px;
+    margin: 0 auto;
+}
+
+ body{
+	width: 1000px;
+ }
+
+/*-----------------footer--------------*/
+/*fix*/
+footer{
+/*     margin-bottom: 100px; */
+/* 	display: inline-block; */
+    text-align: center;
+/*     clear: both; */
+	position: absolute; 
+	top: 800px;
+	bottom: 0;
+	width: 100%;    
+}
+
+footer li{
+    display: inline-block;
+    width: 150px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+/*     padding-right: 15px; */
+}
+
+footer li a:link{
+    color: white;
+}
+
+footer li a:visited{
+    color: white;
+}
+
+footer ul{
+    margin-top: 30px;
+    background-color: black;
+}
+
+/*------- specific contact--------*/
+.me{
+    display: block;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.contact {
+    padding-bottom: 5px;
+}
+
+/*--------------tables----------------*/
+table{
+    empty-cells: show;
+    border: 1px solid black;
+    width: 70%;
+}
+
+table, th, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    height: 2em;
+}
+/*----------tka kata scoring ---------*/
+
+#kumitebutton{
+   background-color: #00cc00;
+}
+
+.tableranking{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/*-----------------------------Login popup box-------------------*/
+
+/* Overlay when Modal is open */
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+/* Modal box or Popup box */
+.popupContainer{
+	position:absolute;
+	width:330px;
+	height: auto;
+	left:45%;
+	top:80px;
+	background: #FFF;
+}
+
+#modal_trigger  {
+    margin: 100px auto;
+     width: 100px;
+     display: block;
+}
+
+.btn  {
+    padding: 10px 20px;
+     background:  #F4F4F2;
+}
+
+.btn_red  {
+    background:  #ED6347;
+     color:  #FFF;
+}
+
+.btn:hover  {
+    background:  #E4E4E2;
+}
+
+.btn_red:hover  {
+    background:  #C12B05;
+}
+
+a.btn  {
+    color: #666;
+     text-align:  center;
+     text-decoration:  none;
+}
+
+a.btn_red  {
+    color:  #FFF;
+}
+
+.one_half  {
+    width: 50%;
+     display:  block;
+     float: left;
+}
+
+.one_half.last  {
+    width: 45%;
+     margin-left: 5%;
+}
+
+/* Popup Styles*/
+.popupHeader  {
+    font-size: 16px;
+     text-transform:  uppercase;
+}
+
+.popupHeader  {
+    background: #F4F4F2;
+     position: relative;
+     padding: 10px 20px;
+     border-bottom: 1px solid #DDD;
+     font-weight: bold;
+}
+
+.popupHeader .modal_close  {
+    position:  absolute;
+     right:  0;
+     top: 0;
+     padding: 10px 15px;
+     background: #E4E4E2;
+     cursor:  pointer;
+     color: #aaa;
+     font-size: 16px;
+}
+
+.popupBody  {
+    padding: 20px;
+}
+
+/* User Login Form */
+.user_login  {
+    display:  none;
+}
+
+.user_login label  {
+    display:  block;
+     margin-bottom: 5px;
+}
+
+.user_login input[type="text"],  .user_login input[type="email"],  .user_login input[type="password"]  {
+    display:  block;
+     width: 90%;
+     padding:  10px;
+     border: 1px solid #DDD;
+     color: #666;
+}
+
+.user_login input[type="checkbox"]  {
+    float: left;
+     margin-right: 5px;
+}
+
+.user_login input[type="checkbox"]+label  {
+    float: left;
+}
+
+
+.user_login .checkbox  {
+    margin-bottom:  10px;
+     clear:  both;
+     overflow:  hidden;
+}
+
+.forgot_password  {
+    display: block;
+     margin:  20px 0 10px;
+     clear:  both;
+     overflow:  hidden;
+     text-decoration:  none;
+     color: #ED6347;
+}
+
+
+
+
+
+
+/*------------------end of login popup box----------------------------*/
+
+
+
+
+

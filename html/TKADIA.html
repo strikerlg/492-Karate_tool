@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/stylesheet.css"/>
+    <link rel="stylesheet" href="CSS/tables.css"/>
+    <link rel="stylesheet" type="text/css" href="fonts/fonts.css"/>
+    <script type="text/javascript" src="js/tkabrackets.js"></script>
+    <script type="text/javascript" src="js/bracketmaker.js"></script>
+<!--    cdn-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!--    jquery and bracket links/ trying absolute paths-->
+    <!--    <link rel="stylesheet" type="text/css" href="http://karateutility.ddns.net/root/node_modules/jquery-bracket/dist/jquery.bracket.min.css" />-->
+<!--    <script type="text/javascript" src="http://karateutility.ddns.net/root/node_modules/jquery-bracket/dist/jquery.bracket.min.js"></script>-->
+<!--    <script type="text/javascript" src="http://karateutility.ddns.net/root/node_modules/jquery/dist/jquery.min.js"></script>-->
+<!--    end-->
+<!--    relative paths-->
+    <link rel="stylesheet" type="text/css" href="/root/node_modules/jquery-bracket/dist/jquery.bracket.min.css" />
+    <script type="text/javascript" src="/root/node_modules/jquery-bracket/dist/jquery.bracket.min.js"></script>
+<!--    <script type="text/javascript" src="/root/node_modules/jquery/dist/jquery.min.js"></script>-->
+<!--    end-->
+    
+    
+<!--    other linking styles-->
+<!--
+    <link rel="stylesheet" type="text/css" href="jquery-bracket/dist/jquery.bracket.min.css" />
+    <script type="text/javascript" src="jquery-bracket/dist/jquery.bracket.min.js"></script>
+    <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+-->
+<!--    -->
+    
+    <title>TKA Kumite</title>
+</head>
+
+<body>
+     <h1 class="title">Karate Tournament Utility</h1>
+    <div class="taskbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="PKCcal.html">PKC Tournament</a></li>
+                <li><a href="AAUcal.html">AAU Tournament</a></li>
+                <li><a href="Season.html">Season Rankings</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h3 class="Header">TKA Kumite Scoring</h3>
+    
+    <form method="get"  action="TKAcal.html">
+        <button type="submit" id="katabutton">TO KATA</button>
+    </form>
+    
+    <div>
+        <label>Number of Contestants:</label>
+        <input type="number" id="contestantvalue" name="contestantvalue">
+        <button onclick="generate()">GO</button> 
+    </div>
+    
+    <div>
+        <form id="tkatablearea">   
+            <div id="kumitetablearea">
+            <table id='kumitetable'>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            </table>
+            </div>
+            
+             <div id="winners">
+                <table id="kuwinnertable">
+                    <tr>
+                        <td>First:<output name="firstplace" id="first"></output></td>
+                        <td>Second:<output id="second"></output></td>
+                    </tr>
+                    <tr>
+                        <td>Third:<output id="third"></output></td>
+                        <td>Fourth:<output id="fourth"></output></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <input type='reset' id="resetbutton" value='Reset Contestants'> 
+        </form>
+        <button id="bracketmaker" onclick="create()">Create Bracket</button>
+    </div>
+    
+    <div id="save">
+    
+    <script>
+       var saveData = {
+    teams: [
+      ["Team 1", "Team 2"],
+      ["Team 3", null],
+      ["Team 4", null],
+      ["Team 5", null]
+    ],
+    results: [
+        [
+          [[1, 0], [null, null], [null, null], [null, null]],
+          [[null, null], [1, 4]],
+          [[null, null], [null, null]]
+        ]
+    ]
+  };
+
+  /* Called whenever bracket is modified
+   *
+   * data:     changed bracket object in format given to init
+   * userData: optional data given when bracket is created.
+   */
+  function saveFn(data, userData) {
+    var json = jQuery.toJSON(data)
+    $('#saveOutput').text('POST '+userData+' '+json)
+    /* You probably want to do something like this
+    jQuery.ajax("rest/"+userData, {contentType: 'application/json',
+                                  dataType: 'json',
+                                  type: 'post',
+                                  data: json})
+    */
+  }
+
+  $(function() {
+      var container = $('div#save .demo')
+      container.bracket({
+        init: saveData,
+        save: saveFn,
+        userData: "http://myapi"})
+
+      /* You can also inquiry the current data */
+      var data = container.bracket('data')
+      $('#dataOutput').text(jQuery.toJSON(data))
+    })   
+    </script>
+    </div>
+    <h4>Save output</h4>
+    <pre id="saveOutput">Try to first modify some scores or teams</pre>
+    <h4>Data inquired at startup</h4>
+    <pre id="dataOutput"></pre>
+   
+     <footer>
+        <nav>
+            <ul>
+                <li><a href="http://www.tkasudo.com/">TKA Association</a></li>
+                <li><a href="http://pkchq.com/">PKC Association</a></li>
+                <li><a href="http://www.aaukarate.org/">AAU Association</a></li>   
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

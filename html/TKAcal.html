@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/stylesheet.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/tables.css"/>
+    <link rel="stylesheet" type="text/css" href="fonts/fonts.css"/>
+    <script type="text/javascript" src="js/tkatable.js"></script>
+    <script type="text/javascript" src="ajax/tkakataajax.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>TKA Kata</title>
+</head>
+
+<body>
+     <div class="wrapper1">
+     <h1 class="title">Karate Tournament Utility</h1>
+    </div>
+    <div class="taskbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="PKCcal.html">PKC Tournament</a></li>
+                <li><a href="AAUcal.html">AAU Tournament</a></li>
+                <li><a href="Season.html">Season Rankings</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="wrapper2">
+    <h3 class="Header">TKA Kata Scoring</h3>
+    
+    <a href="TKADIA.html" class="button" id="kumitebutton">To Kata</a>
+    
+
+    
+    <div class="topbuttons">
+        <label>Number of Contestants:</label>
+        <input type="number" id="valueID" name="valueID">
+        <button onclick="maketable()" class="button">Create Table</button> 
+        <button onclick="addrow()" class="button">Add Row</button>
+    </div>
+   
+    <br>
+    
+    <div>
+    <form>
+        <table id="katatable">
+            <tr class="titlerow">
+                <th>ID#</th>
+                <th>Name</th>
+                <th>Judge #1</th>
+                <th>Judge #2</th>
+                <th>Judge #3</th>
+                <th>Judge #4</th>
+                <th>Judge #5</th>
+                <th>Total</th>
+            </tr>
+       </table>
+       <br>
+    
+    <div id="winners">
+        <table id="winnertable">
+            <tr>
+                <td>First:<output name="firstplace" id="first"></output></td>
+                <td>Second:<output id="second"></output></td>
+            </tr>
+            <tr>
+                <td>Third:<output id="third"></output></td>
+                <td>Fourth:<output id="fourth"></output></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="centerbuttons">
+    <label id="checklable">Take out high and low</label><input type="checkbox" id="checkbox">
+<!--        might have to take the button out of the form after testing-->
+    <button onclick="winnerplaces()" class="button" id="findwin">Find Winners</button>
+    </div>
+    <input type="reset" value="Reset Scores" class="button" id="resetscore">    
+    </form>  
+    </div>    
+        
+        <!--    got to use ajax to use the php page-->
+    <button onclick="tkakataadd()" class="button" id="addseason">Add to Season</button>
+    </div>
+    
+
+        
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="http://www.tkasudo.com/">TKA Association</a></li>
+                <li><a href="http://pkchq.com/">PKC Association</a></li>
+                <li><a href="http://www.aaukarate.org/">AAU Association</a></li>   
+            </ul>
+        </nav>
+    </div>
+    </footer>
+    
+</body>
+</html>

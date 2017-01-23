@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/stylesheet.css"/>
+    <link rel="stylesheet" href="CSS/tables.css">
+    <script type="text/javascript" src="js/tkatable.js"></script>
+    <title>TKA Kata</title>
+</head>
+
+<body>
+     <h1 class="title">Karate Tournament Utility</h1>
+    <div class="taskbar">
+        <nav>
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="PKCcal.html">PKC Tournament</a></li>
+                <li><a href="AAUcal.html">AAU Tournament</a></li>
+                <li><a href="Season.html">Season Rankings</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <h3 class="Header">TKA Kata Scoring</h3>
+    
+    
+    <section>
+        <form>
+            <!--note: figure out how to get to kumite-->
+            <form action="TKADIA.html">
+            <input type="submit" value="TO KUMITE" id="kumitebutton">
+            </form>
+            <input type="submit" value="Add to Season">
+            <input type="reset" value="Reset All">
+        </form>
+    </section>    
+    
+<!--probably going to have to use php for most of this /the whole webpage/-->
+<!--use javascript to add all together-->
+<!--    use php to auto fill in names-->
+<!--    figure out a different way to duplicate tables -->
+<!--    form?-->
+<form>
+    <table class="tableranking" id="tablecal">
+    <tr class="titlerow">
+        <th>ID#</th>
+        <th>Name</th>
+        <th>Judge #1</th>
+        <th>Judge #2</th>
+        <th>Judge #3</th>
+        <th>Judge #4</th>
+        <th>Judge #5</th>
+        <th>Total</th>
+    </tr>
+    <tr>
+              <?php 
+<!--while loop here  to get more rows depending on the number of participants-->
+?>
+        <td><input type="text"></td>                
+        <td><input type="text"></td>
+<!--        points-->
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+<!--        -->
+<!--        total-->
+        <td><input type="text" class="totalCol"></td>
+<!--    -->
+    </tr>
+    <tr>
+        <td><input type="text"></td>                
+        <td><input type="text"></td>
+<!--        points-->
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+<!--        -->
+<!--        total-->
+        <td><input type="text" class="totalCol"></td>
+<!--    -->
+    </tr>
+    <tr>
+        <td><input type="text"></td>                
+        <td><input type="text"></td>
+<!--        points-->
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+<!--        -->
+<!--        total-->
+        <td><input type="text" class="totalCol"></td>
+<!--    -->
+    </tr>
+        <tr>
+        <td><input type="text"></td>                
+        <td><input type="text"></td>
+<!--        points-->
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+        <td><input type="text" class="datarow"></td>
+<!--        -->
+<!--        total-->
+        <td><input type="text" class="totalCol"></td>
+<!--    -->
+    </tr>
+    </table>
+</form>
+    
+    <section>
+        <form>
+            <input type="checkbox" name="scoring" value="Take out high and low" class="checkbox"> Take out high and low
+            <input type="submit" value="Score" class="score">
+        </form>
+        
+<!-- jquery results here then pull and add to database       -->
+<!--        <? php inlude "tablecalculator.php' ?>-->
+        <table class="winning">
+        <tr>
+            <th>1st:</th>
+            <td class="first"></td>
+            <th>2nd:</th>
+            <td class="second"></td>
+        </tr>
+        <tr>
+            <th>3rd:</th>
+            <td class="third"></td>
+            <th>4th:</th>
+            <td class="fourth"></td>
+        </tr>
+        </table>
+
+    </section>
+    
+    <footer>
+    <div class="bottom">
+        <nav>
+            <ul>
+                <li><a href="http://www.tkasudo.com/">TKA Association</a></li>
+                <li><a href="http://pkchq.com/">PKC Association</a></li>
+                <li><a href="http://www.aaukarate.org/">AAU Association</a></li>   
+            </ul>
+        </nav>
+    </div>
+    </footer>
+</body>
+</html>

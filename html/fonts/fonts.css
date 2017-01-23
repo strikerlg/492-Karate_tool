@@ -1,0 +1,40 @@
+@font-face {
+    font-family: sevenmonkeys;
+    src: url('SEVEMFBR.TTF');
+}
+
+h1 {
+    font-family: sevenmonkeys;
+}
+
+p {
+    font-family: 'Roboto Slab', serif;
+}
+
+h3 {
+    font-family: 'Roboto Slab', serif;
+}
+
+li a{
+    font-family: 'Roboto Slab', serif;
+}
+
+a {
+    font-family: 'Roboto Slab', serif;
+}
+
+button {
+    font-family: 'Roboto Slab', serif;;
+}
+
+input {
+    font-family: 'Roboto Slab', serif;
+}
+
+label {
+    font-family: 'Roboto Slab', serif;
+}
+
+table {
+    font-family: 'Roboto Slab', serif;
+}
