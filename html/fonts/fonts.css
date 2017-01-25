@@ -3,38 +3,53 @@
     src: url('SEVEMFBR.TTF');
 }
 
+@font-face {
+    font-family: hkgokukaikk;
+    src: url('hkgokukaikk.ttf');
+}
+
 h1 {
     font-family: sevenmonkeys;
 }
 
 p {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Open Sans', serif;
 }
 
 h3 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Open Sans', serif;
 }
 
 li a{
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Open Sans', serif;
 }
 
 a {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Open Sans', serif;
 }
 
 button {
-    font-family: 'Roboto Slab', serif;;
+    font-family: 'Open Sans', serif;;
 }
 
 input {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Open Sans', serif;
 }
 
 label {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Open Sans', serif;
 }
 
 table {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Open Sans', serif;
+}
+
+.kanji1{
+    font-family: hkgokukaikk; 
+    font-size: 130px;
+}
+
+.kanji2{
+    font-family: hkgokukaikk; 
+    font-size: 130px;
 }

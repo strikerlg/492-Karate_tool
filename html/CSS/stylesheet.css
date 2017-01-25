@@ -9,10 +9,53 @@
   padding: 0;
 }
 
+/*--------------Kanji1---------------*/
+
+#kanji11{
+    position: absolute;
+    top: 25%;
+    margin-left: 4%;
+}
+
+#kanji12{
+    position: absolute;
+    top: 50%;
+    margin-left: 4%;
+}
+
+#kanji13{
+    position: absolute;
+    top: 75%;
+    margin-left: 4%;
+}
+
+/*--------kanji2----------------*/
+#kanji21{
+    position: absolute;
+    top: 25%;
+    margin-left: 89%;
+}
+
+#kanji22{
+    position: absolute;
+    top: 50%;
+    margin-left: 89%;
+}
+
+#kanji23{
+    position: absolute;
+    top: 75%;
+    margin-left: 89%;
+}
+
+
 /*-----------taskbar----------------*/
 .taskbar {
-    width: 100%;
+/*    width: 100%;*/
     position: absolute;
+    width: 91.42em;
+    margin-left: 220px;
+/*    margin-right: 200px;*/
 }
 
 .taskbar nav ul{
@@ -46,8 +89,8 @@
 
 #login_trigger{
     text-align: center;
-    top: 12%;
-    right: 30%;
+    top: 3%;
+    right: 13%;
     position: absolute
 }
 
@@ -55,10 +98,6 @@
 
 h1{
     font-size: 3em;
-/*    width: 100%;*/
-/*    display: flex;*/
-/*    align-content: center;*/
-/*    justify-content: center; */
     text-align: center;
     color: black;
 }
@@ -84,36 +123,32 @@ h3{
 }
 
 body {
-    background-image: url('../pics/karatedojo.jpg');
+/*    background-image: url('../pics/karatedojo.jpg');*/
 /*    background-attachment: fixed;*/
+    background-color: #FFF689;
 }
 
 .wrapper1 {
-    background-color: white;
+    background-color: #CFFFB0;
     margin-left: 220px;
     margin-right: 220px;
 }
 
 .wrapper2{
-    background-color: white;
+    background-color: #CFFFB0;
     margin-left: 220px;
     margin-right: 220px;
-    margin-top: 90px;
-    height: 850px;
+    margin-top: 9px;
+    height: 900px;
 }
 
 /*-----------------footer--------------
 /*fix*/
 footer{
-/*     margin-bottom: 100px; */
-/* 	display: inline-block; */
     text-align: center;
-/*     clear: both; */
-	position: absolute; 
-/*	top: 800px;*/
-/*	bottom: 10;*/
-	width: 100%; 
-/*    margin-bottom: px;*/
+/*	position: absolute; */
+    margin-left: 220px;
+	width: 91.42em; 
     border-top-color: #FFBA2A; 
     border-top-width: 3px;
     border-top-style: solid;
@@ -138,7 +173,6 @@ footer li a:visited{
 }
 
 footer nav ul{
-    margin-top: 30px;
     background-color: black;
 }
 
@@ -161,10 +195,9 @@ footer nav ul{
 /*----------buttons ---------*/
 
 #kumitebutton{
-   
     margin-bottom: 5px;
-    top: 25%;
-    right: 30%;
+    
+    right: 16%;
     position: absolute;
     
 }
@@ -219,6 +252,11 @@ footer nav ul{
 #checkbox {}
 
 #checklable {}
+
+#addseason{
+    margin-left: 45.2%;
+    margin-top: 5%;
+}
 
 
 

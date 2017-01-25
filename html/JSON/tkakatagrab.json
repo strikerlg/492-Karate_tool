@@ -1,0 +1,12 @@
+$(document.ready(function(){
+
+var data;
+
+$( "#tkagrab" ).click(function() {
+  $.get("karatetool.ddns.net/tkatagrab.php", function(data)
+  {
+  	var jsonObj = $.parseJSON(data);
+  }
+});
+
+});
