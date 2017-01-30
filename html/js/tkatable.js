@@ -116,9 +116,6 @@ function addscore() {
                     {
                         
                     }
-            
-
-                }
         }
     else
         {
