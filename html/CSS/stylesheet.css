@@ -11,6 +11,14 @@
 
 /*--------------Kanji1---------------*/
 
+.kanji1{
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    cursor: default;
+}
+
+
 #kanji11{
     position: absolute;
     top: 25%;
@@ -30,6 +38,13 @@
 }
 
 /*--------kanji2----------------*/
+.kanji2{
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    cursor: default;
+}
+
 #kanji21{
     position: absolute;
     top: 25%;

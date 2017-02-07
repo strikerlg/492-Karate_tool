@@ -40,6 +40,7 @@ function maketable() {
         }
     }
 
+//fix
 function addrow(){
     var tablecont = document.getElementById("katatable");
     var figurecount = 1;

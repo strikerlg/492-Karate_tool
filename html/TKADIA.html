@@ -6,30 +6,12 @@
     <link rel="stylesheet" href="CSS/stylesheet.css"/>
     <link rel="stylesheet" href="CSS/tables.css"/>
     <link rel="stylesheet" type="text/css" href="fonts/fonts.css"/>
+    <link rel="stylesheet" href="CSS/brackets.css"/>
     <script type="text/javascript" src="js/tkabrackets.js"></script>
-    <script type="text/javascript" src="js/bracketmaker.js"></script>
-<!--    cdn-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-    <!--    jquery and bracket links/ trying absolute paths-->
-    <!--    <link rel="stylesheet" type="text/css" href="http://karateutility.ddns.net/root/node_modules/jquery-bracket/dist/jquery.bracket.min.css" />-->
-<!--    <script type="text/javascript" src="http://karateutility.ddns.net/root/node_modules/jquery-bracket/dist/jquery.bracket.min.js"></script>-->
-<!--    <script type="text/javascript" src="http://karateutility.ddns.net/root/node_modules/jquery/dist/jquery.min.js"></script>-->
-<!--    end-->
-<!--    relative paths-->
     <link rel="stylesheet" type="text/css" href="/root/node_modules/jquery-bracket/dist/jquery.bracket.min.css" />
     <script type="text/javascript" src="/root/node_modules/jquery-bracket/dist/jquery.bracket.min.js"></script>
-<!--    <script type="text/javascript" src="/root/node_modules/jquery/dist/jquery.min.js"></script>-->
-<!--    end-->
-    
-    
-<!--    other linking styles-->
-<!--
-    <link rel="stylesheet" type="text/css" href="jquery-bracket/dist/jquery.bracket.min.css" />
-    <script type="text/javascript" src="jquery-bracket/dist/jquery.bracket.min.js"></script>
-    <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
--->
-<!--    -->
+
     
     <title>TKA Kumite</title>
 </head>
@@ -54,8 +36,9 @@
     <div class="wrapper2">
     <h3 class="Header">TKA Kumite Scoring</h3>
     
+<!--    fix button-->
     <form method="get"  action="TKAcal.html">
-        <button type="submit" id="katabutton">TO KATA</button>
+        <button type="submit" id="katabutton" class="button">TO KATA</button>
     </form>
     
     <div>
@@ -92,10 +75,13 @@
         </form>
         <button id="bracketmaker" onclick="create()">Create Bracket</button>
     </div>
+
+    <div id="fightboxarea">
+        <h2>Fightbox Will show up here</h2>
+    </div>
     
-    <div id="save">
-    
-        
+    <div id="bracket">
+        <h2>Bracket will show up here</h2>
     </div>
    
      <footer>

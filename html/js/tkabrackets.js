@@ -12,7 +12,11 @@ function generate() {
             }
         else if (rowamount == 1)
             {
-                alert("Need more than 1 contestant.")
+                alert("Need more than 1 contestant.");
+            }
+        else if (rowamount == 0)
+            {
+                alert("Please enter players");
             }
         else
             {
@@ -51,55 +55,76 @@ function shuffle(array) {
   return array;
 }
 
+//fix the alert
+//will have to go back into css and change some things.
+//changes made added some id positions
+//bracket area - 32 players
+function create() {
+    var players = document.getElementById("contestantvalue").value;
+    var contplayers = parseInt(players);
 
+    
+    if (contplayers < 2)
+        {
+            alert("Please enter players.");
+        }
+        else
+        {
+            var area = document.getElementById("bracket");
+            var large = "<main><ul class='round round-1'><li class='spacer'></li><li class='game game-top winner' id='pos0'></li><li class='game game-spacer'>&nbsp;</li><li class='game game-bottom' id='pos1'></li><li class='spacer'></li><li class='game game-top winner' id='pos2'></li><li class='game game-spacer'></li><li class='game game-bottom' id='pos3'></li> <li class='spacer'></li><li class='game game-top' id='pos4'></li><li class='game game-spacer'></li><li class='game game-bottom winner' id='pos5'></li><li class='spacer'></li><li class='game game-top winner' id='pos6'></li><li class='game game-spacer'></li><li class='game game-bottom' id='pos7'></li><li class='spacer'></li> <li class='game game-top winner' id='pos8'></li><li class='game game-spacer'></li><li class='game game-bottom' id='pos9'></li><li class='spacer'></li><li class='game game-top winner' id='pos10'></li><li class='game game-spacer'></li><li class='game game-bottom ' id='pos11'></li><li class='spacer'></li><li class='game game-top winner' id='pos12'></li><li class='game game-spacer'></li><li class='game game-bottom' id='pos13'></li><li class='spacer'></li><li class='game game-top winner' id='pos14'></li><li class='game game-spacer'></li><li class='game game-bottom' id='pos15'></li><li class='spacer'></li></ul><ul class='round round-2'><li class='spacer'></li><li class='game game-top winner' id='pos16'></li><li class='game game-spacer'></li><li class='game game-bottom ' id='pos17'></li><li class='spacer'></li><li class='game game-top winner' id='pos18'></li><li class='game game-spacer'></li><li class='game game-bottom ' id='pos19'></li><li class='spacer'></li><li class='game game-top ' id='pos20'></li><li class='game game-spacer'></li><li class='game game-bottom winner' id='pos21'></li><li class='spacer'></li><li class='game game-top ' id='pos22'></li><li class='game game-spacer'></li><li class='game game-bottom winner' id='pos23'></li><li class='spacer'></li></ul><ul class='round round-3'><li class='spacer'></li><li class='game game-top winner' id='pos24'></li><li class='game game-spacer'></li><li class='game game-bottom ' id='pos25'></li><li class='spacer'></li><li class='game game-top ' id='pos26'></li><li class='game game-spacer'></li><li class='game game-bottom winner' id='pos27'></li><li class='spacer'></li></ul><ul class='round round-4'><li class='spacer'></li><li class='game game-top winner' id='pos28'></li><li class='game game-spacer'></li><li class='game game-bottom ' id='pos29'></li><li class='spacer'></li></ul></main>";
+            area.innerHTML = large;
+            
+            //going to have to make another if for > 16 players
 
-//bracket making area
-//figure this out, hitting create table bugs it out
-// for testing comment out the for loops and start with just getting the basic tables to show up
-//function create() {
-//    var number = document.getElementById("contestantvalue").value;
-//    var amount = parseInt(number);
-//    var namearray = new Array(amount);
-//    
-//    //create of the table brackets
-//    var createtable = document.getElementById("brackets");
-//    createtable.innerHTML = "<table id='mainbracket'></table>";
-//    
-//    var loserbracketcreate = document.getElementById("loser");
-//    loserbracketcreate.innerHTML = "<table id='loserbracket'></table>";
-//    
-//    for(var nameiterator = 0; nameiterator < amount; ++nameiterator)
-//        {
-//            var name = document.getElementById("cont"+nameiterator).value;
-////            namearray.splice(nameiterator,0,name);
-//            namearray.push(name);
-//        }
-//
-//    //    the splicing might need to be taken out later
-//    namearray.sort(function(a, b){return a-b});
-//    namearray.splice(amount+1,1);
-//    namearray = shuffle(namearray);
-//    
-//    //variables to help create the tables
-//    var table1 = document.getElementById("mainbracket");
-//    var table2 = document.getElementById("loserbracket");
-//    var rowmaker = 0;
-//    var counter1 = 0;
-//    var counter2 = 0;
-//    //perfect easy brackets first: 2, 4, 8 16, 32
-//    var knownbrackets = [2,4,8,16,32];
-//    
-//    if(amount == knownbrackets[0] || amount == knownbrackets[1] || amount == knownbrackets[2] || amount == knownbrackets[3] || amount == knownbrackets[4])
-//        {
-//            while(rowmaker < (amount*2))
-//            {
-//                var rowinsert = table1.insertRow(counter1);
-//                ++counter1;
-//                while(rowmaker < amount)
-//                {
-//                    var tdcell = rowinsert.insertCell(counter2);
-//                    ++counter2;
-//                }
-//            }
-//        }
-//}
+            placename();
+            fightbox();
+            
+        }
+   
+}
+
+//going to have to traverse throughout the table to get the positions
+//do a shuffle here
+//places names into bracket
+function placename(){
+	var numberofcontestants = document.getElementById("contestantvalue").value;
+	var valuenumber = parseInt(numberofcontestants);
+
+	//array that stores the names
+	var namestorage = [];
+
+	//start storing names into array
+	for(var innercount = 0; innercount < valuenumber; innercount++)
+	{
+		var store = document.getElementById('cont'+innercount).value;
+		namestorage.push(store);
+	}
+
+    shuffle(namestorage);
+
+    for(var position = 0; position < valuenumber; position++)
+        {
+            var holder = namestorage[position];
+            var build = document.getElementById('pos'+position);
+              build.innerHTML = holder;
+        }
+}
+
+//the area in which names will be pulled to
+function fightbox(){
+    var divarea = document.getElementById("fightboxarea");
+    var medium = "<fieldset><legend>Fightbox</legend><output id='fighter1'></output><input type='number' id='score1'><br><output id='fighter2'></output><input type='number' id='score2'><button onclick='fight()'>Score</button></fieldset>";
+    divarea.innerHTML = medium;
+
+    //do the output inner html right here.
+    var value1 = document.getElementById("pos0").value;
+    var value2 = document.getElementById("pos1").value;
+    var output1 = document.getElementById("fighter1");
+    var output2 = document.getElementById("fighter2");
+    output1.innerHTML = value1;
+    output2.innerHTML = value2;
+}
+
+function fight(){
+    ;
+}
