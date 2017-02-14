@@ -8,9 +8,8 @@
     <link rel="stylesheet" type="text/css" href="fonts/fonts.css"/>
     <link rel="stylesheet" href="CSS/brackets.css"/>
     <script type="text/javascript" src="js/tkabrackets.js"></script>
+    <script type="text/javascript" src="js/fight.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/root/node_modules/jquery-bracket/dist/jquery.bracket.min.css" />
-    <script type="text/javascript" src="/root/node_modules/jquery-bracket/dist/jquery.bracket.min.js"></script>
 
     
     <title>TKA Kumite</title>
@@ -33,15 +32,16 @@
         </nav>
     </div>
     
+     <h1 id="kanji11" class="kanji1">空</h1><h1 id="kanji12" class="kanji1">手</h1><h1 id="kanji13" class="kanji1">道</h1>
+     <h1 id="kanji21" class="kanji2">空</h1><h1 id="kanji22" class="kanji2">手</h1><h1 id="kanji23" class="kanji2">道</h1>
+    
     <div class="wrapper2">
     <h3 class="Header">TKA Kumite Scoring</h3>
     
 <!--    fix button-->
-    <form method="get"  action="TKAcal.html">
-        <button type="submit" id="katabutton" class="button">TO KATA</button>
-    </form>
+    <a href="TKAcal.html" class="button" id="kumitebutton">To Kata</a>
     
-    <div>
+    <div class="topbuttons">
         <label>Number of Contestants:</label>
         <input type="number" id="contestantvalue" name="contestantvalue">
         <button onclick="generate()">GO</button> 
@@ -49,16 +49,28 @@
     
     <div>
         <form id="tkatablearea">   
-            <div id="kumitetablearea">
+            
             <table id='kumitetable'>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
             </tr>
             </table>
-            </div>
             
-             <div id="winners">
+            <input type='reset' id="resetbutton" value='Reset Contestants' class="button"> 
+        </form>
+        <button id="bracketmaker" onclick="create()" class="button">Create Bracket</button>
+    </div>
+        
+    <div id="fightboxarea">
+        <h2>Fightbox Will show up here</h2>
+    </div>
+    
+    <div id="bracket">
+        <h2>Bracket will show up here</h2>
+    </div>
+        
+        <div id="winners">
                 <table id="kuwinnertable">
                     <tr>
                         <td>First:<output name="firstplace" id="first"></output></td>
@@ -70,18 +82,6 @@
                     </tr>
                 </table>
             </div>
-            
-            <input type='reset' id="resetbutton" value='Reset Contestants'> 
-        </form>
-        <button id="bracketmaker" onclick="create()">Create Bracket</button>
-    </div>
-
-    <div id="fightboxarea">
-        <h2>Fightbox Will show up here</h2>
-    </div>
-    
-    <div id="bracket">
-        <h2>Bracket will show up here</h2>
     </div>
    
      <footer>
@@ -93,5 +93,6 @@
             </ul>
         </nav>
     </footer>
+        
 </body>
 </html>

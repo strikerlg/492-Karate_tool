@@ -6,7 +6,7 @@
     border-width: medium;
     border-collapse: collapse;
     margin-left: 60px;
-    margin-top: -10px;
+    margin-top: 10px;
 }
 
 #katatable th{
@@ -52,7 +52,7 @@
     border-width: medium;
     border-collapse: collapse;
     margin-left: 60px;
-    margin-top: -10px;
+    margin-top: 10px;
 }
 
 #kumitetable td, #kumitetable th{
@@ -87,6 +87,11 @@
 }
 
 /*end of kumite winner tables*/
+
+/*---------fightbox-----------*/
+#fightboxarea{
+    margin-top: 20px;
+}
 
 
 

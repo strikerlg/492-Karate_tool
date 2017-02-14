@@ -137,8 +137,6 @@ h3{
 }
 
 body {
-/*    background-image: url('../pics/karatedojo.jpg');*/
-/*    background-attachment: fixed;*/
     background-color: #FFF689;
 }
 
@@ -191,8 +189,6 @@ footer nav ul{
 }
 
 
-
-
 /*------- specific contact/ contact page--------*/
 .me{
     display: block;
@@ -207,6 +203,18 @@ footer nav ul{
 
 
 /*----------buttons ---------*/
+
+#resetbutton {
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 10px;
+}
+
+#bracketmaker {
+    position: absolute;
+    margin-left: 30%;
+    margin-top: 10px;
+}
 
 #kumitebutton{
     margin-bottom: 5px;
