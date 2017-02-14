@@ -1,12 +1,12 @@
-
 /*-------Kata Tables*/
 #katatable{
-    width: 90%;
     border: 1px solid black;
     border-width: medium;
     border-collapse: collapse;
+/*
     margin-left: 60px;
-    margin-top: 10px;
+    margin-top: -10px;
+*/
 }
 
 #katatable th{
@@ -29,9 +29,9 @@
 /* ------kata winner outputs--------*/
 #winners {
     padding-top: 20px;
-    width: 100%;
-    margin-left: 30%;
-    width: 600px;
+/*     width: 100%; */
+    margin-left: 200px;
+/*     width: 600px; */
 }
 
 
@@ -52,7 +52,7 @@
     border-width: medium;
     border-collapse: collapse;
     margin-left: 60px;
-    margin-top: 10px;
+    margin-top: -10px;
 }
 
 #kumitetable td, #kumitetable th{
@@ -87,11 +87,6 @@
 }
 
 /*end of kumite winner tables*/
-
-/*---------fightbox-----------*/
-#fightboxarea{
-    margin-top: 20px;
-}
 
 
 
