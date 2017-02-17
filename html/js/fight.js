@@ -35,9 +35,9 @@ function fight16()
             var position11 = document.getElementById("pos10").innerHTML;
             var position13 = document.getElementById("pos12").innerHTML;
             var position15 = document.getElementById("pos14").innerHTML;
-//            //round 2
-//            var position16 = document.getElementById("pos16").innerHTML;
-//            var position18 = document.getElementById("pos18").innerHTML;
+//            //round 2 find another way to compare it's messing up here
+            var position16 = document.getElementById("pos16").innerHTML;
+            var position18 = document.getElementById("pos18").innerHTML;
 //            var position20 = document.getElementById("pos20").innerHTML;
 //            var position22 = document.getElementById("pos22").innerHTML;
 //            //round 3
@@ -47,10 +47,10 @@ function fight16()
 //            //round 4
 //            var position28 = document.getElementById("pos28").innerHTML;
 //          
-            //special cases
+            //special cases need worked on
             //need losers bracket
             //need to test blanks
-            //first fight: pos0 pos1; if no next fight the guy wins
+            //first fight: pos0 pos1; if no next fight the guy wins; special
             if(compare1 == position1)
                 {
                     var firstfightval1 = document.getElementById("score1").value;
@@ -423,6 +423,101 @@ function fight16()
                             var nextfight82 = document.getElementById("pos17").innerHTML;
                             output1.innerHTML =  nextfight81;
                             output2.innerHTML = nextfight82;
+                        }
+                }
+            //round2
+            //fight9: pos16 pos17; special case not done
+            else if(compare1 == position16)
+                {
+                    var fight91 = document.getElementById("score1").value;
+                    var fight9val1 = parseInt(fight91);
+                    var fight92 = document.getElementById("score2").value;
+                    var fight9val2 = parseInt(fight92);
+                    if (fight9val1 > fight9val2)
+                        {
+                            var winnerft9 = document.getElementById("fighter1").innerHTML;
+                            var placepos24 = document.getElementById("pos24");
+                            placepos23.innerHTML = winnerft9;
+                            var nextfight91 = document.getElementById("pos18").innerHTML;
+                            var nextfight92 = document.getElementById("pos19").innerHTML;
+                            if(nextfight91 === blank)
+                                {
+                                    //special area whoever loses the second fight gets put in the losers bracket 
+                                    //winner of this bracket wins
+                                    alert("Not done");
+                                }
+                            else
+                                {
+                                    output1.innerHTML = nextfight91;
+                                    output2.innerHTML = nextfight92;
+                                }     
+                        }
+                    else
+                        {
+                            var winnerft9 = document.getElementById("fighter2").innerHTML;
+                            var placepos24 = document.getElementById("pos24");
+                            placepos23.innerHTML = winnerft9;
+                            var nextfight91 = document.getElementById("pos18").innerHTML;
+                            var nextfight92 = document.getElementById("pos19").innerHTML;
+                            if(nextfight91 === blank)
+                                {
+                                    //special area whoever loses the second fight gets put in the losers bracket 
+                                    //winner of this bracket wins
+                                    alert("Not done");
+                                }
+                            else
+                                {
+                                    output1.innerHTML = nextfight91;
+                                    output2.innerHTML = nextfight92;
+                                }  
+                        }
+                }
+            //fight10: pos18 pos19
+            else if(compare1 == position18)
+                {
+                    var fight101 = document.getElementById("score1").value;
+                    var fight10val1 = parseInt(fight101);
+                    var fight102 = document.getElementById("score2").value;
+                    var fight10val2 = parseInt(fight102);
+                    if(fight10val1 > fight10val2)
+                        {
+                            var winnerft10 = document.getElementById("fighter1").innerHTML;
+                            var placepos24 = document.getElementById("pos25");
+                            placepos23.innerHTML = winnerft10;
+                            var nextfight101 = document.getElementById("pos20").innerHTML;
+                            var nextfight102 = document.getElementById("pos21").innerHTML;
+                            if(nextfight101 === blank)
+                                {
+                                    var round3next1 = document.getElementById("pos24").innerHTML;
+                                    var round3next2 = document.getElementById("pos25").innerHTML;
+                                    output1.innerHTML = round3next1;
+                                    output2.innerHTML = round3next2;
+                                }
+                            else
+                                {
+                                    output1.innerHTML = nextfight101;
+                                    output2.innerHTML = nextfight102;
+                                }     
+                        }
+                    else
+                        {
+                            var winnerft10 = document.getElementById("fighter2").innerHTML;
+                            var placepos24 = document.getElementById("pos25");
+                            placepos23.innerHTML = winnerft10;
+                            var nextfight101 = document.getElementById("pos20").innerHTML;
+                            var nextfight102 = document.getElementById("pos21").innerHTML;
+                            if(nextfight101 === blank)
+                                {
+                                    var round3next1 = document.getElementById("pos24").innerHTML;
+                                    var round3next2 = document.getElementById("pos25").innerHTML;
+                                    output1.innerHTML = round3next1;
+                                    output2.innerHTML = round3next2;
+                                }
+                            else
+                                {
+                                    output1.innerHTML = nextfight101;
+                                    output2.innerHTML = nextfight102;
+                                }      
                         }
                 }
                 else
