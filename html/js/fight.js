@@ -2,6 +2,7 @@
 function fight(){
     var numbervalue = document.getElementById("contestantvalue").value;
     var numbercount = parseInt(numbervalue);
+    var loserstorage = [];
     
     //greter than 16 players
     if(numbercount > 16)
@@ -525,3 +526,7 @@ function fight16()
                         alert("What is it doing");
                     }
         }
+
+function loserlayout(){
+    ;
+}
