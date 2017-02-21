@@ -1,8 +1,10 @@
+//global variable for loser storage
+var loserstorage = [];
+
 //the main function that will be running it all.
 function fight(){
     var numbervalue = document.getElementById("contestantvalue").value;
     var numbercount = parseInt(numbervalue);
-    var loserstorage = [];
     
     //greter than 16 players
     if(numbercount > 16)
@@ -19,8 +21,8 @@ function fight32(){
             alert("not done yet");
         }
 
-function check(){
-    ;
+function done(){
+    alert("Tournament is done");
 }
 
 //need to go back and do the loser bracket and the if the next person is not there.
@@ -66,11 +68,13 @@ function fight16()
 //            //round 4
             var position28 = document.getElementById("pos28").innerHTML;
             var position29 = document.getElementById("pos29").innerHTML;
-//          
-            //special cases need worked on
+
+//          loserbracket
+            
+            
             //need losers bracket
             //need to test blanks
-            //first fight: pos0 pos1; if no next fight the guy wins; special
+            //first fight: pos0 pos1; if no next fight the guy wins; special is done; done
             if(compare1 == position1 && compare2 == position2)
                 {
                     var firstfightval1 = document.getElementById("score1").value;
@@ -83,6 +87,8 @@ function fight16()
                             var winnerft1 = document.getElementById("fighter1").innerHTML;
                             var placepos16 = document.getElementById("pos16");
                             placepos16.innerHTML = winnerft1;
+                            var loserft1 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft1);
                             var grabnext1 = document.getElementById("pos2").innerHTML;
                             var grabnext2 = document.getElementById("pos3").innerHTML;
                             //win automatically if no others
@@ -94,11 +100,25 @@ function fight16()
                                 var winner2 = document.getElementById("second");
                                 winner.innerHTML = firstplace;
                                 winner2.innerHTML = secondplace;
+                                done();
                             }
                             else
                             {
-                                output1.innerHTML = grabnext1;
-                                output2.innerHTML = grabnext2;
+                                if(grabnext2 == blank)
+                                    {
+                                        var placepos2 = document.getElementById("pos2").innerHTML;
+                                        var grab17 = document.getElementById("pos17");
+                                        grab17.innerHTML = placepos2;
+                                        var take16 = document.getElementById("pos16").innerHTML;
+                                        output1.innerHTML= take16;
+                                        var take17 = document.getElementById("pos17").innerHTML;
+                                        output2.innerHTML = take17;
+                                    }
+                                else
+                                    {
+                                        output1.innerHTML = grabnext1;
+                                        output2.innerHTML = grabnext2;   
+                                    }
                             }
                         }
                     else
@@ -106,6 +126,8 @@ function fight16()
                             var winnerft1 = document.getElementById("fighter2").innerHTML;
                             var placepos16 = document.getElementById("pos16");
                             placepos16.innerHTML = winnerft1;
+                            var loserft1 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft1);
                             var grabnext1 = document.getElementById("pos2").innerHTML;
                             var grabnext2 = document.getElementById("pos3").innerHTML;
                             output1.innerHTML = grabnext1;
@@ -118,15 +140,26 @@ function fight16()
                                 var winner2 = document.getElementById("second");
                                 winner = firstplace;
                                 winner2 = secondplace;
+                                done();
                             }
-                            else
-                            {
-                                output1.innerHTML = grabnext1;
-                                output2.innerHTML = grabnext2;
-                            }
+                            if(grabnext2 == blank)
+                                    {
+                                        var placepos2 = document.getElementById("pos2").innerHTML;
+                                        var grab17 = document.getElementById("pos17");
+                                        grab17.innerHTML = placepos2;
+                                        var take16 = document.getElementById("pos16").innerHTML;
+                                        output1.innerHTML= take16;
+                                        var take17 = document.getElementById("pos17").innerHTML;
+                                        output2.innerHTML = take17;
+                                    }
+                                else
+                                    {
+                                        output1.innerHTML = grabnext1;
+                                        output2.innerHTML = grabnext2;   
+                                    }
                         }
                 }
-            //fight 2: pos2 pos3  not finished empty next round  top not winning
+            //fight 2: pos2 pos3  not finished empty next round  
             else if (compare1 == position3 &&  compare2 == position4)
                 {
                     var secondfightval1 = document.getElementById("score1").value;
@@ -139,6 +172,8 @@ function fight16()
                             var winnerft2 = document.getElementById("fighter1").innerHTML;
                             var placepos17 = document.getElementById("pos17");
                             placepos17.innerHTML = winnerft2;
+                            var loserft2 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft2);
                             var grabnext3 = document.getElementById("pos4").innerHTML;
                             var grabnext4 = document.getElementById("pos5").innerHTML;
                             if(grabnext1 === blank)
@@ -150,8 +185,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = grabnext3;
-                                    output2.innerHTML = grabnext4;
+                                    if(grabnext4 == blank)
+                                        {
+                                            var placepos4 = document.getElementById("pos4").innerHTML;
+                                            var grab18 = document.getElementById("pos18");
+                                            grab18.innerHTML = placepos4;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = grabnext3;
+                                            output2.innerHTML = grabnext4;
+                                        }
                                 }
                         }
                     else
@@ -159,6 +207,8 @@ function fight16()
                             var winnerft2 = document.getElementById("fighter2").innerHTML;
                             var placepos17 = document.getElementById("pos17");
                             placepos17.innerHTML = winnerft2;
+                            var loserft1 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft1);
                             var grabnext3 = document.getElementById("pos4").innerHTML;
                             var grabnext4 = document.getElementById("pos5").innerHTML;
                             if(grabnext1 === blank)
@@ -170,8 +220,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = grabnext3;
-                                    output2.innerHTML = grabnext4;
+                                    if(grabnext4 == blank)
+                                        {
+                                            var placepos4 = document.getElementById("pos4").innerHTML;
+                                            var grab18 = document.getElementById("pos18");
+                                            grab18.innerHTML = placepos4;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = grabnext3;
+                                            output2.innerHTML = grabnext4;
+                                        }
                                 }
                         }  
                 }
@@ -187,9 +250,11 @@ function fight16()
                             var winnerft3 = document.getElementById("fighter1").innerHTML;
                             var placepos18 = document.getElementById("pos18");
                             placepos18.innerHTML = winnerft3;
+                            var loserft3 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft3);
                             var nextfight31 = document.getElementById("pos6").innerHTML;
                             var nextfight32 = document.getElementById("pos7").innerHTML;
-                            if(nextfight31 === blank)
+                            if(nextfight31 == blank)
                                 {
                                     var grab16 = document.getElementById("pos16").innerHTML;
                                     var grab17 = document.getElementById("pos17").innerHTML;
@@ -198,8 +263,22 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight31;
-                                    output2.innerHTML = nextfight32;
+                                    if(nextfight32 == blank)
+                                        {
+                                            var placepos6 = document.getElementById("pos6").innerHTML;
+                                            var grab19 = document.getElementById("pos19");
+                                            grab19.innerHTML = placepos6;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                            
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight31;
+                                            output2.innerHTML = nextfight32;
+                                        }
                                 }
                         }
                     else
@@ -207,9 +286,11 @@ function fight16()
                             var winnerft3 = document.getElementById("fighter2").innerHTML;
                             var placepos18 = document.getElementById("pos18");
                             placepos18.innerHTML = winnerft3;
+                            var loserft3 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft3);
                             var nextfight31 = document.getElementById("pos6").innerHTML;
                             var nextfight32 = document.getElementById("pos7").innerHTML;
-                            if(nextfight31 === blank)
+                            if(nextfight31 == blank)
                                 {
                                     var grab16 = document.getElementById("pos16").innerHTML;
                                     var grab17 = document.getElementById("pos17").innerHTML;
@@ -218,8 +299,22 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight31;
-                                    output2.innerHTML = nextfight32;
+                                    if(nextfight32 == blank)
+                                        {
+                                            var placepos6 = document.getElementById("pos6").innerHTML;
+                                            var grab19 = document.getElementById("pos19");
+                                            grab19.innerHTML = placepos6;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                            
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight31;
+                                            output2.innerHTML = nextfight32;
+                                        }
                                 }
                         }
                 }
@@ -235,6 +330,8 @@ function fight16()
                             var winnerft4 = document.getElementById("fighter1").innerHTML;
                             var placepos19 = document.getElementById("pos19");
                             placepos19.innerHTML = winnerft4;
+                            var loserft4 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft4);
                             var nextfight41 = document.getElementById("pos8").innerHTML;
                             var nextfight42 = document.getElementById("pos9").innerHTML;
                             if(nextfight41 === blank)
@@ -246,8 +343,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight41;
-                                    output2.innerHTML = nextfight42;
+                                    if(nextfight42 == blank)
+                                        {
+                                            var placepos8 = document.getElementById("pos8").innerHTML;
+                                            var grab20 = document.getElementById("pos20");
+                                            grab20.innerHTML = placepos8;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight41;
+                                            output2.innerHTML = nextfight42;
+                                        }
                                 }
                         }
                     else
@@ -255,6 +365,8 @@ function fight16()
                             var winnerft4 = document.getElementById("fighter2").innerHTML;
                             var placepos19 = document.getElementById("pos19");
                             placepos19.innerHTML = winnerft4;
+                            var loserft4 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft4);
                             var nextfight41 = document.getElementById("pos8").innerHTML;
                             var nextfight42 = document.getElementById("pos9").innerHTML;
                             if(nextfight41 === blank)
@@ -266,8 +378,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight41;
-                                    output2.innerHTML = nextfight42;
+                                    if(nextfight42 == blank)
+                                        {
+                                            var placepos8 = document.getElementById("pos8").innerHTML;
+                                            var grab20 = document.getElementById("pos20");
+                                            grab20.innerHTML = placepos8;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight41;
+                                            output2.innerHTML = nextfight42;
+                                        }
                                 }
                         }
                 }
@@ -284,6 +409,8 @@ function fight16()
                             var winnerft5 = document.getElementById("fighter1").innerHTML;
                             var placepos20 = document.getElementById("pos20");
                             placepos20.innerHTML = winnerft5;
+                            var loserft5 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft5);
                             var nextfight51 = document.getElementById("pos10").innerHTML;
                             var nextfight52 = document.getElementById("pos11").innerHTML;
                             if(nextfight51 === blank)
@@ -295,8 +422,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight51;
-                                    output2.innerHTML = nextfight52;
+                                    if( nextfight52 == blank)
+                                        {
+                                            var placepos10 = document.getElementById("pos10").innerHTML;
+                                            var grab21 = document.getElementById("pos21");
+                                            grab21.innerHTML = placepos10;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight51;
+                                            output2.innerHTML = nextfight52;
+                                        }
                                 }
                         }
                     else
@@ -304,6 +444,8 @@ function fight16()
                             var winnerft5 = document.getElementById("fighter2").innerHTML;
                             var placepos20 = document.getElementById("pos20");
                             placepos20.innerHTML = winnerft5;
+                            var loserft5 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft5);
                             var nextfight51 = document.getElementById("pos10").innerHTML;
                             var nextfight52 = document.getElementById("pos11").innerHTML;
                             if(nextfight51 === blank)
@@ -315,8 +457,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight51;
-                                    output2.innerHTML = nextfight52;
+                                    if( nextfight52 == blank)
+                                        {
+                                            var placepos10 = document.getElementById("pos10").innerHTML;
+                                            var grab21 = document.getElementById("pos21");
+                                            grab21.innerHTML = placepos10;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight51;
+                                            output2.innerHTML = nextfight52;
+                                        }
                                 }
                         }
                 }
@@ -333,6 +488,8 @@ function fight16()
                             var winnerft6 = document.getElementById("fighter1").innerHTML;
                             var placepos21 = document.getElementById("pos21");
                             placepos21.innerHTML = winnerft6;
+                            var loserft6 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft6);
                             var nextfight61 = document.getElementById("pos12").innerHTML;
                             var nextfight62 = document.getElementById("pos13").innerHTML;
                             if(nextfight61 === blank)
@@ -344,8 +501,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight61;
-                                    output2.innerHTML = nextfight62;
+                                    if(nextfight62 == blank)
+                                        {
+                                            var placepos12 = document.getElementById("pos12").innerHTML;
+                                            var grab22 = document.getElementById("pos22");
+                                            grab22.innerHTML = placepos12;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight61;
+                                            output2.innerHTML = nextfight62;   
+                                        }
                                 }   
                         }
                     else
@@ -353,6 +523,8 @@ function fight16()
                              var winnerft6 = document.getElementById("fighter2").innerHTML;
                             var placepos21 = document.getElementById("pos21");
                             placepos21.innerHTML = winnerft6;
+                            var loserft6 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft6);
                             var nextfight61 = document.getElementById("pos12").innerHTML;
                             var nextfight62 = document.getElementById("pos13").innerHTML;
                             if(nextfight61 === blank)
@@ -364,8 +536,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight61;
-                                    output2.innerHTML = nextfight62;
+                                    if(nextfight62 == blank)
+                                        {
+                                            var placepos12 = document.getElementById("pos12").innerHTML;
+                                            var grab22 = document.getElementById("pos22");
+                                            grab22.innerHTML = placepos12;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight61;
+                                            output2.innerHTML = nextfight62;   
+                                        }
                                 }   
                         }
                 }
@@ -381,6 +566,8 @@ function fight16()
                             var winnerft7 = document.getElementById("fighter1").innerHTML;
                             var placepos22 = document.getElementById("pos22");
                             placepos22.innerHTML = winnerft7;
+                            var loserft7 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft7);
                             var nextfight71 = document.getElementById("pos14").innerHTML;
                             var nextfight72 = document.getElementById("pos15").innerHTML;
                             if(nextfight71 === blank)
@@ -392,8 +579,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight71;
-                                    output2.innerHTML = nextfight72;
+                                    if(nextfight72 == blank)
+                                        {
+                                            var placepos14 = document.getElementById("pos14").innerHTML;
+                                            var grab23 = document.getElementById("pos23");
+                                            grab23.innerHTML = placepos14;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight71;
+                                            output2.innerHTML = nextfight72;
+                                        }
                                 }     
                         }
                     else
@@ -401,6 +601,8 @@ function fight16()
                             var winnerft7 = document.getElementById("fighter2").innerHTML;
                             var placepos22 = document.getElementById("pos22");
                             placepos22.innerHTML = winnerft7;
+                            var loserft7 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft7);
                             var nextfight71 = document.getElementById("pos14").innerHTML;
                             var nextfight72 = document.getElementById("pos15").innerHTML;
                             if(nextfight71 === blank)
@@ -412,8 +614,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight71;
-                                    output2.innerHTML = nextfight72;
+                                    if(nextfight72 == blank)
+                                        {
+                                            var placepos14 = document.getElementById("pos14").innerHTML;
+                                            var grab23 = document.getElementById("pos23");
+                                            grab23.innerHTML = placepos14;
+                                            var take16 = document.getElementById("pos16").innerHTML;
+                                            output1.innerHTML= take16;
+                                            var take17 = document.getElementById("pos17").innerHTML;
+                                            output2.innerHTML = take17;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight71;
+                                            output2.innerHTML = nextfight72;
+                                        }
                                 } 
                         }
                 }
@@ -429,6 +644,8 @@ function fight16()
                             var winnerft8 = document.getElementById("fighter1").innerHTML;
                             var placepos23 = document.getElementById("pos23");
                             placepos23.innerHTML = winnerft8;
+                            var loserft8 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft8);
                             var nextfight81 = document.getElementById("pos16").innerHTML;
                             var nextfight82 = document.getElementById("pos17").innerHTML;
                             output1.innerHTML =  nextfight81;
@@ -439,6 +656,8 @@ function fight16()
                             var winnerft8 = document.getElementById("fighter2").innerHTML;
                             var placepos23 = document.getElementById("pos23");
                             placepos23.innerHTML = winnerft8;
+                            var loserft8 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft8);
                             var nextfight81 = document.getElementById("pos16").innerHTML;
                             var nextfight82 = document.getElementById("pos17").innerHTML;
                             output1.innerHTML =  nextfight81;
@@ -446,7 +665,7 @@ function fight16()
                         }
                 }
             //round2
-            //fight9: pos16 pos17; special case not done
+            //fight9: pos16 pos17; special done; done
             else if(compare1 == position16 && compare2 == position17)
                 {
                     var fight91 = document.getElementById("score1").value;
@@ -458,18 +677,35 @@ function fight16()
                             var winnerft9 = document.getElementById("fighter1").innerHTML;
                             var placepos24 = document.getElementById("pos24");
                             placepos24.innerHTML = winnerft9;
+                            var loserft9 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft9);
                             var nextfight91 = document.getElementById("pos18").innerHTML;
                             var nextfight92 = document.getElementById("pos19").innerHTML;
-                            if(nextfight91 === blank)
+                            if(nextfight91 == blank)
                                 {
-                                    //special area whoever loses the second fight gets put in the losers bracket 
-                                    //winner of this bracket wins
-                                    alert("Not done");
+                                    var firstplace = document.getElementById("first");
+                                    firstplace.innerHTML = winnerft9;
+                                    loserstorage.push(loserft9);
+                                    loser();
+                                    loserlayout();
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight91;
-                                    output2.innerHTML = nextfight92;
+                                    if(nextfight92 == blank)
+                                        {
+                                            var placepos18 = document.getElementById("pos18").innerHTML;
+                                            var grab25 = document.getElementById("pos25");
+                                            grab25.innerHTML = placepos18;
+                                            var take24 = document.getElementById("pos24").innerHTML;
+                                            output1.innerHTML= take24;
+                                            var take25 = document.getElementById("pos25").innerHTML;
+                                            output2.innerHTML = take25; 
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight91;
+                                            output2.innerHTML = nextfight92;   
+                                        }
                                 }     
                         }
                     else
@@ -477,18 +713,35 @@ function fight16()
                             var winnerft9 = document.getElementById("fighter2").innerHTML;
                             var placepos24 = document.getElementById("pos24");
                             placepos24.innerHTML = winnerft9;
+                            var loserft9 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft9);
                             var nextfight91 = document.getElementById("pos18").innerHTML;
                             var nextfight92 = document.getElementById("pos19").innerHTML;
                             if(nextfight91 === blank)
                                 {
-                                    //special area whoever loses the second fight gets put in the losers bracket 
-                                    //winner of this bracket wins
-                                    alert("Not done");
+                                    var firstplace = document.getElementById("first");
+                                    firstplace.innerHTML = winnerft9;
+                                    loserstorage.push(loserft9);
+                                    loser();
+                                    loserlayout();
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight91;
-                                    output2.innerHTML = nextfight92;
+                                    if(nextfight92 == blank)
+                                        {
+                                            var placepos18 = document.getElementById("pos18").innerHTML;
+                                            var grab25 = document.getElementById("pos25");
+                                            grab25.innerHTML = placepos18;
+                                            var take24 = document.getElementById("pos24").innerHTML;
+                                            output1.innerHTML= take24;
+                                            var take25 = document.getElementById("pos25").innerHTML;
+                                            output2.innerHTML = take25;  
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight91;
+                                            output2.innerHTML = nextfight92;   
+                                        }
                                 }  
                         }
                 }
@@ -504,6 +757,8 @@ function fight16()
                             var winnerft10 = document.getElementById("fighter1").innerHTML;
                             var placepos25 = document.getElementById("pos25");
                             placepos25.innerHTML = winnerft10;
+                            var loserft10 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft10);
                             var nextfight101 = document.getElementById("pos20").innerHTML;
                             var nextfight102 = document.getElementById("pos21").innerHTML;
                             if(nextfight101 === blank)
@@ -515,8 +770,22 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight101;
-                                    output2.innerHTML = nextfight102;
+                                    if( nextfight102 == blank)
+                                        {
+                                            var placepos20 = document.getElementById("pos20").innerHTML;
+                                            var grab26 = document.getElementById("pos26");
+                                            grab26.innerHTML = placepos20;
+                                            var take24 = document.getElementById("pos24").innerHTML;
+                                            output1.innerHTML= take24;
+                                            var take25 = document.getElementById("pos25").innerHTML;
+                                            output2.innerHTML = take25;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight101;
+                                            output2.innerHTML = nextfight102;
+                                        }
+                                    
                                 }     
                         }
                     else
@@ -524,6 +793,8 @@ function fight16()
                             var winnerft10 = document.getElementById("fighter2").innerHTML;
                             var placepos25 = document.getElementById("pos25");
                             placepos25.innerHTML = winnerft10;
+                            var loserft10 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft10);
                             var nextfight101 = document.getElementById("pos20").innerHTML;
                             var nextfight102 = document.getElementById("pos21").innerHTML;
                             if(nextfight101 === blank)
@@ -535,8 +806,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight101;
-                                    output2.innerHTML = nextfight102;
+                                    if( nextfight102 == blank)
+                                        {
+                                            var placepos20 = document.getElementById("pos20").innerHTML;
+                                            var grab26 = document.getElementById("pos26");
+                                            grab26.innerHTML = placepos20;
+                                            var take24 = document.getElementById("pos24").innerHTML;
+                                            output1.innerHTML= take24;
+                                            var take25 = document.getElementById("pos25").innerHTML;
+                                            output2.innerHTML = take25;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight101;
+                                            output2.innerHTML = nextfight102;
+                                        }
                                 }      
                         }
                 }
@@ -552,6 +836,8 @@ function fight16()
                             var winnerft11 = document.getElementById("fighter1").innerHTML;
                             var placepos26 = document.getElementById("pos26");
                             placepos26.innerHTML = winnerft11;
+                            var loserft11 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft11);
                             var nextfight111 = document.getElementById("pos22").innerHTML;
                             var nextfight112 = document.getElementById("pos23").innerHTML;
                             if(nextfight111 === blank)
@@ -563,8 +849,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight111;
-                                    output2.innerHTML = nextfight112;
+                                    if(nextfight112 == blank)
+                                        {
+                                            var placepos22 = document.getElementById("pos22").innerHTML;
+                                            var grab27 = document.getElementById("pos27");
+                                            grab27.innerHTML = placepos22;
+                                            var take24 = document.getElementById("pos24").innerHTML;
+                                            output1.innerHTML= take24;
+                                            var take25 = document.getElementById("pos25").innerHTML;
+                                            output2.innerHTML = take25;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight111;
+                                            output2.innerHTML = nextfight112;   
+                                        }
                                 } 
                         }
                     else
@@ -572,9 +871,11 @@ function fight16()
                             var winnerft11 = document.getElementById("fighter2").innerHTML;
                             var placepos26 = document.getElementById("pos26");
                             placepos26.innerHTML = winnerft11;
+                            var loserft11 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft11);
                             var nextfight111 = document.getElementById("pos22").innerHTML;
                             var nextfight112 = document.getElementById("pos23").innerHTML;
-                            if(nextfight111 === blank)
+                            if(nextfight111 == blank)
                                 {
                                     var round3next3 = document.getElementById("pos24").innerHTML;
                                     var round3next4 = document.getElementById("pos25").innerHTML;
@@ -583,8 +884,21 @@ function fight16()
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight111;
-                                    output2.innerHTML = nextfight112;
+                                    if(nextfight112 == blank)
+                                        {
+                                            var placepos22 = document.getElementById("pos22").innerHTML;
+                                            var grab27 = document.getElementById("pos27");
+                                            grab27.innerHTML = placepos22;
+                                            var take24 = document.getElementById("pos24").innerHTML;
+                                            output1.innerHTML= take24;
+                                            var take25 = document.getElementById("pos25").innerHTML;
+                                            output2.innerHTML = take25;
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight111;
+                                            output2.innerHTML = nextfight112;   
+                                        }
                                 }
                         }
                 }
@@ -599,6 +913,8 @@ function fight16()
                         {
                             var winnerft12 = document.getElementById("fighter1").innerHTML;
                             var placepos27 = document.getElementById("pos27");
+                            var loserft12 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft12);
                             placepos27.innerHTML = winnerft12;
                             output1.innerHTML  = document.getElementById("pos24").innerHTML;
                             output2.innerHTML  = document.getElementById("pos25").innerHTML;
@@ -607,6 +923,8 @@ function fight16()
                         {
                             var winnerft12 = document.getElementById("fighter2").innerHTML;
                             var placepos27 = document.getElementById("pos27");
+                            var loserft12 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft12);
                             placepos27.innerHTML = winnerft12;
                             output1.innerHTML  = document.getElementById("pos24").innerHTML;
                             output2.innerHTML  = document.getElementById("pos25").innerHTML;
@@ -625,17 +943,35 @@ function fight16()
                             var winnerft13 = document.getElementById("fighter1").innerHTML;
                             var placepos28 = document.getElementById("pos28");
                             placepos28.innerHTML = winnerft13;
+                            var loserft13 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft13);
                             var nextfight131 = document.getElementById("pos26").innerHTML;
                             var nextfight132 = document.getElementById("pos27").innerHTML;
-                            if(nextfight131 === blank)
+                            if(nextfight131 == blank)
                                 {
-                                    //special case one will be winner other will be put into loser and start loser bracket
-                                    alert("not done");
+                                    var firstplace = document.getElementById("first");
+                                    firstplace.innerHTML = winnerft13;
+                                    loserstorage.push(loserft13);
+                                    loser();
+                                    loserlayout();
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight131;
-                                    output2.innerHTML = nextfight132;
+                                    if(nextfight132 == blank)
+                                        {
+                                            var placepos26 = document.getElementById("pos26").innerHTML;
+                                            var grab29 = document.getElementById("pos29");
+                                            grab29.innerHTML = placepos26;
+                                            var take28 = document.getElementById("pos28").innerHTML;
+                                            output1.innerHTML= take28;
+                                            var take29 = document.getElementById("pos29").innerHTML;
+                                            output2.innerHTML = take29;   
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight131;
+                                            output2.innerHTML = nextfight132;
+                                        }
                                 } 
                         }
                     else
@@ -643,17 +979,35 @@ function fight16()
                             var winnerft13 = document.getElementById("fighter2").innerHTML;
                             var placepos28 = document.getElementById("pos28");
                             placepos28.innerHTML = winnerft13;
+                            var loserft13 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft13);
                             var nextfight131 = document.getElementById("pos26").innerHTML;
                             var nextfight132 = document.getElementById("pos27").innerHTML;
-                            if(nextfight131 === blank)
+                            if(nextfight131 == blank)
                                 {
-                                    //special case one will be winner other will be put into loser and start loser bracket
-                                    alert("not done");
+                                    var firstplace = document.getElementById("first");
+                                    firstplace.innerHTML = winnerft13;
+                                    loserstorage.push(loserft13);
+                                    loser();
+                                    loserlayout();
                                 }
                             else
                                 {
-                                    output1.innerHTML = nextfight131;
-                                    output2.innerHTML = nextfight132;
+                                    if(nextfight132 == blank)
+                                        {
+                                            var placepos26 = document.getElementById("pos26").innerHTML;
+                                            var grab29 = document.getElementById("pos29");
+                                            grab29.innerHTML = placepos26;
+                                            var take28 = document.getElementById("pos28").innerHTML;
+                                            output1.innerHTML= take28;
+                                            var take29 = document.getElementById("pos29").innerHTML;
+                                            output2.innerHTML = take29;   
+                                        }
+                                    else
+                                        {
+                                            output1.innerHTML = nextfight131;
+                                            output2.innerHTML = nextfight132;
+                                        }
                                 }   
                         }
                 }
@@ -669,6 +1023,8 @@ function fight16()
                             var winnerft14 = document.getElementById("fighter1").innerHTML;
                             var placepos29 = document.getElementById("pos29");
                             placepos29.innerHTML = winnerft14;
+                            var loserft14 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft14);
                             var nextfight141 = document.getElementById("pos28").innerHTML;
                             var nextfight142 = document.getElementById("pos29").innerHTML;
                             output1.innerHTML = nextfight141;
@@ -679,6 +1035,8 @@ function fight16()
                             var winnerft14 = document.getElementById("fighter2").innerHTML;
                             var placepos29 = document.getElementById("pos29");
                             placepos29.innerHTML = winnerft14;
+                            var loserft14 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft14);
                             var nextfight141 = document.getElementById("pos28").innerHTML;
                             var nextfight142 = document.getElementById("pos29").innerHTML;
                             output1.innerHTML = nextfight141;
@@ -698,23 +1056,45 @@ function fight16()
                             var winnerft15 = document.getElementById("fighter1").innerHTML;
                             var placewinner = document.getElementById("first");
                             placewinner.innerHTML = winnerft15;
+                            var loserft15 = document.getElementById("fighter2").innerHTML;
+                            loserstorage.push(loserft15);
                             //start loser bracket
+                            loser();
+                            loserlayout();
                         }
                     else
                         {
                             var winnerft15 = document.getElementById("fighter2").innerHTML;
                             var placewinner = document.getElementById("first");
                             placewinner.innerHTML = winnerft15;
+                            var loserft15 = document.getElementById("fighter1").innerHTML;
+                            loserstorage.push(loserft15);
                             //start loser bracket
+                            loser();
+                            loserlayout();
                         }
                 }
+            
+            //loserbracket
             
                 else
                     {
                         alert("What is it doing");
                     }
+            
         }
 
 function loserlayout(){
-    ;
+    var losers = document.getElementById("contestantvalue").value;
+	var losernumber = parseInt(losers);
+    var valloser = losernumber - 1;
+    
+    //maybe shuffle
+    for(var loserposition = 0; loserposition < valloser; loserposition++)
+        {
+            var loserjail = loserstorage[loserposition];
+            var loserbuild = document.getElementById('loser'+ loserposition);
+            loserbuild.innerHTML = loserjail;
+        }
+    loserbox();
 }
