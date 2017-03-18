@@ -3,10 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="CSS/stylesheet.css"/>
-<!--    bottom links might need changed-->
-    <script type="text/javascript" src="ajax/kataajax.js"></script>
-    <script type="text/javascript" src="ajax/kumiteajax.js" ></script>
+    <script type="text/javascript" src="ajax/dataajax.js"></script>
     <title>Season Rankings</title>
 </head>
 
@@ -26,29 +25,23 @@
     </div>
     <h3 class="Header">Season Rankings</h3>
    
-<!--
-    <form action="" id="selection">
-        <select name="rankings" onchange="rankings(this.value)">
-        <option value="">Select Category</option>
-        <option value="TKKA">TKA Kata</option>
-        <option value="TKKU">TKA Kumite</option>
-        </select>
-    </form>
--->
+
     <div id="katabuttons">
-        <button onclick="tkakata()">TKA KATA</button>
-        <button onclick="">PKC KATA</button>
-        <button onclick="">AAU KATA</button>
+        <button class="button" id="TKAK" name="TKA Kata" value="tkakata" >TKA KATA</button>
+        <button class="button" id="PKCK" name="PKC Kata" value="pkckata">PKC KATA</button>
+        <button class="button" id="AAUK" name="AAU Kata" value="aaukata">AAU KATA</button>
     </div>
     
     
     <div id="kumitebuttons">
-        <button id="tkagrab">TKA KUMITE</button>
-        <button onclick="">PKC KATA</button>
-        <button onclick="">AAU KATA</button>
+        <button class="button" id="TKAKU" name="TKA Kumite" value="tkakumite">TKA KUMITE</button>
+        <button class="button" id="PKCKU" name="PKC Kumite" value="pkckumite">PKC KUMITE</button>
+        <button class="button" id="AAUKU" name="AAU Kumite" value="aaukumite">AAU KUMITE</button>
     </div>
     
-    <div id="displayrank">Rankings will display here after selection.</div>
+    <div id="displayrank">
+        <h4>Rankings will display here after selection.</h4>
+    </div>
     
     <div class="bottom">
     <footer>
