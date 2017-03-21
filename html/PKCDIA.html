@@ -3,16 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
     <link rel="stylesheet" href="CSS/stylesheet.css"/>
+    <link rel="stylesheet" href="CSS/tables.css"/>
+    <link rel="stylesheet" type="text/css" href="fonts/fonts.css"/>
+    <link rel="stylesheet" href="CSS/brackets.css"/>
+    <script type="text/javascript" src="js/tkabrackets.js"></script>
+    <script type="text/javascript" src="js/fight.js"></script>
+    <script type="text/javascript" src="js/fight32.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="ajax/seasonupdatepkckumite.js" ></script>
     <title>PKC Kumite</title>
 </head>
 
 <body>
+    <div class="wrapper1">
      <h1 class="title">Karate Tournament Utility</h1>
+    
+    
     <div class="taskbar">
         <nav>
             <ul>
-                <li><a href="Index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="TKAcal.html">TKA Tournament</a></li>
                 <li><a href="AAUcal.html">AAU Tournament</a></li>
                 <li><a href="Season.html">Season Rankings</a></li>
@@ -20,9 +32,69 @@
             </ul>
         </nav>
     </div>
+    
+     <h1 id="kanji11" class="kanji1">空</h1><h1 id="kanji12" class="kanji1">手</h1><h1 id="kanji13" class="kanji1">道</h1>
+     <h1 id="kanji21" class="kanji2">空</h1><h1 id="kanji22" class="kanji2">手</h1><h1 id="kanji23" class="kanji2">道</h1>
+    
+
     <h3 class="Header">PKC Kumite Scoring</h3>
+    
+
+    <a href="PKCcal.html" class="button" id="kumitebutton">To Kata</a>
+    
+    <div class="topbuttons">
+        <label>Number of Contestants:</label>
+        <input type="number" id="contestantvalue" name="contestantvalue">
+        <button onclick="generate()">GO</button> 
+    </div>
+    
+    <div>
+        <form id="tkatablearea">   
+            
+            <table id='kumitetable'>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            </table>
+            
+            <input type='reset' id="resetbutton" value='Reset Contestants' class="button"> 
+        </form>
+        <button id="bracketmaker" onclick="create()" class="button">Create Bracket</button>
+    </div>
+        
+    <div id="fightboxarea">
+        
+    </div>
+    
+    <div id="bracket">
+    </div>
+    
+    <div id="loserbox">    
+    </div>
+        
+    <div id="loser">
+    </div>
+        
+    <div id="fourthbox">
+    </div>
+        
+    <div id="winners">
+            <table id="kuwinnertable">
+                <tr>
+                    <td>First:<output id="first"></output></td>
+                    <td>Second:<output id="second"></output></td>
+                </tr>
+                <tr>
+                    <td>Third:<output id="third"></output></td>
+                    <td>Fourth:<output id="fourth"></output></td>
+                </tr>
+            </table>
+    </div>
+        
+    <button class="button" id="addseason">Add to Season</button>    
+   
      <footer>
-    <div class="bottom">
         <nav>
             <ul>
                 <li><a href="http://www.tkasudo.com/">TKA Association</a></li>
@@ -30,7 +102,8 @@
                 <li><a href="http://www.aaukarate.org/">AAU Association</a></li>   
             </ul>
         </nav>
-    </div>
     </footer>
+    </div>
+        
 </body>
 </html>

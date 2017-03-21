@@ -27,7 +27,7 @@ function maketable() {
             var cell8 = row.insertCell(7);
             cell8.className = "totalcolumn";
             
-            cell1.innerHTML = "<input onkeyup='Lookup(this.value)' type='text' id='idnum"+count+"'>";
+            cell1.innerHTML = "<input type='text' id='idnum"+count+"'>";
             cell2.innerHTML = "<input type='text' id='name"+count+"'>";
             cell3.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+count+"' id='score'>";
             cell4.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+count+"' id='score'>"; 
@@ -88,38 +88,11 @@ function addrow(){
 //the take out high and low is still bad
 //function for adding scores together
 function addscore() {
-    var checking = document.getElementById("checkbox").checked;
     var numberofcellsrows =  document.getElementById("valueID").value;
     var amount = parseInt(numberofcellsrows);
-    //need to figure out this problem. // go throughout each row wouldn't work. Need to figure out something about the array.
-    if(checking == true)
-        { 
-//            var lowhigh = new Array(amount); what if less than 5 it wouldn't pick up the others
-//            //this for loop explores the entered scores row depending on where rowexplore is
-//            for(var rowexplore = 0; rowexplore < amount; ++rowexplore)
-//                {
-//                    var arrayrow = document.getElementsByName("enterscore"+rowexplore); 
-//                    //this for loop explores each individual cell in that row.
-//                    for(var numberscores = 0; numberscores < arrayrow.length; ++numberscores)
-//                        {
-//                            if(parseFloat(arrayrow[numberscores].value))
-//                                {
-//                                    var scoresentered = parseFloat(arrayrow[numberscores].value);
-//                                    lowhigh.push(scoresentered);
-//                                }
-//                        }
-//                    //function goes here
-//                    lowhigh.sort(function(a, b){return b-a});
-//                    highlow.apply(this, lowhigh);
-                var numberofjudges = 5; 
-                var lowhigh = new Array(numberofjudges);
-                for(var rowexplore = 0; rowexplore < amount; ++rowexplore)
-                    {
-                        
-                    }
-        }
-    else
-        {
+   
+    
+        
             for(var explorerow = 0; explorerow < amount; ++explorerow)
             {
                 var arr = document.getElementsByName("enterscore"+explorerow); 
@@ -131,7 +104,6 @@ function addscore() {
                     }
                 document.getElementById('total'+explorerow).value = tot;
             } 
-        }
     }
 
 

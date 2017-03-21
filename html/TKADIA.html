@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
     <link rel="stylesheet" href="CSS/stylesheet.css"/>
     <link rel="stylesheet" href="CSS/tables.css"/>
     <link rel="stylesheet" type="text/css" href="fonts/fonts.css"/>
@@ -11,8 +12,7 @@
     <script type="text/javascript" src="js/fight.js"></script>
     <script type="text/javascript" src="js/fight32.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-    
+    <script type="text/javascript" src="ajax/seasonupdatetkakumite.js"></script>
     <title>TKA Kumite</title>
 </head>
 
@@ -36,10 +36,10 @@
      <h1 id="kanji11" class="kanji1">空</h1><h1 id="kanji12" class="kanji1">手</h1><h1 id="kanji13" class="kanji1">道</h1>
      <h1 id="kanji21" class="kanji2">空</h1><h1 id="kanji22" class="kanji2">手</h1><h1 id="kanji23" class="kanji2">道</h1>
     
-<!--    <div class="wrapper2">-->
+
     <h3 class="Header">TKA Kumite Scoring</h3>
     
-<!--    fix button-->
+<!--        check out the css for this-->
     <a href="TKAcal.html" class="button" id="kumitebutton">To Kata</a>
     
     <div class="topbuttons">
@@ -64,38 +64,35 @@
     </div>
         
     <div id="fightboxarea">
-        <h2>Fightbox Will show up here</h2>
+        
     </div>
     
     <div id="bracket">
-        <h2>Bracket will show up here</h2>
     </div>
     
-    <div id="loserbox">
-        <h2>loserbox</h2>    
+    <div id="loserbox">    
     </div>
         
     <div id="loser">
-        <h2>Loser bracket</h2>
     </div>
         
     <div id="fourthbox">
-        <h2>fourthbox</h2>
-        </div>
+    </div>
         
-        <div id="winners">
-                <table id="kuwinnertable">
-                    <tr>
-                        <td>First:<output name="firstplace" id="first"></output></td>
-                        <td>Second:<output id="second"></output></td>
-                    </tr>
-                    <tr>
-                        <td>Third:<output id="third"></output></td>
-                        <td>Fourth:<output id="fourth"></output></td>
-                    </tr>
-                </table>
-            </div>
-<!--    </div>-->
+    <div id="winners">
+            <table id="kuwinnertable">
+                <tr>
+                    <td>First:<output id="first"></output></td>
+                    <td>Second:<output id="second"></output></td>
+                </tr>
+                <tr>
+                    <td>Third:<output id="third"></output></td>
+                    <td>Fourth:<output id="fourth"></output></td>
+                </tr>
+            </table>
+    </div>
+        
+    <button class="button" id="addseason">Add to Season</button>    
    
      <footer>
         <nav>
