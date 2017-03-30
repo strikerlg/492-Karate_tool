@@ -27,7 +27,7 @@ function generate() {
                     var cell1 = row.insertCell(0);
                     var cell2 = row.insertCell(1);
 
-                    cell1.innerHTML = "<input onkeyup='' type='number' id='idnumber"+count+"'>";
+                    cell1.innerHTML = "<input onkeyup='doname(this.value,this.id)' type='number' id='idnumber"+count+"'>";
                     cell2.innerHTML = "<input type='text' id='cont"+count+"'>";
 
                     count = count + 1;

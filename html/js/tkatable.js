@@ -13,7 +13,7 @@ function maketable() {
             var cell1 = row.insertCell(0);
             cell1.className = "celltable";
             var cell2 = row.insertCell(1);
-            cell2.className = "celltable";
+            cell2.id = "celltable"+count;
             var cell3 = row.insertCell(2);
             cell3.className = "celltable";
             var cell4 = row.insertCell(3);
@@ -27,7 +27,7 @@ function maketable() {
             var cell8 = row.insertCell(7);
             cell8.className = "totalcolumn";
             
-            cell1.innerHTML = "<input type='text' id='idnum"+count+"'>";
+            cell1.innerHTML = "<input onkeyup='doname(this.value,this.id)' type='text' id='idnum"+count+"'>";
             cell2.innerHTML = "<input type='text' id='name"+count+"'>";
             cell3.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+count+"' id='score'>";
             cell4.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+count+"' id='score'>"; 
@@ -40,13 +40,13 @@ function maketable() {
         }
     }
 
-//fix
+//fix problem is probably where it's being insterted
 function addrow(){
-    var tablecont = document.getElementById("katatable");
-    var figurecount = 1;
+    var tablecont = document.getElementById("katatable").getElementsByTagName('tbody')[0];
     var rowvalue = document.getElementById("valueID").value;
     var realrowvalue = parseInt(rowvalue);
-    var correctrow = figurecount + realrowvalue;
+    var correctrow = realrowvalue + 1;
+    var continuething = correctrow;
     
     if(rowvalue == 0)
     {
@@ -54,7 +54,7 @@ function addrow(){
     }
     else
     {
-        var rowadd = tablecont.insertRow(correctrow);
+        var rowadd = tablecont.insertRow(tablecont.rows.length);
             
             var cell1 = rowadd.insertCell(0);
             var cell2 = rowadd.insertCell(1);
@@ -71,17 +71,19 @@ function addrow(){
             var cell8 = rowadd.insertCell(7);
             
         
-            cell1.innerHTML = "<input onkeyup='Lookup()' type='text' id='idnum"+correctrow+"'>";
-            cell2.innerHTML = "<input type='text' id='name"+correctrow+"'>";
-            cell3.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+correctrow+"' id='score'>";
-            cell4.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+correctrow+"' id='score'>"; 
-            cell5.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+correctrow+"' id='score'>";
-            cell6.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+correctrow+"' id='score'>";
-            cell7.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+correctrow+"' id='score'>";
-            cell8.innerHTML = "<output name='finalscore"+correctrow+"' id='total"+correctrow+"'></output>";
+            cell1.innerHTML = "<input onkeyup='doname(this.value,this.id)' type='text' id='idnum"+continuething+"'>";
+            cell2.innerHTML = "<input type='text' id='name"+continuething+"'>";
+            cell3.innerHTML = "<input onkeyup='addscoreagain()' type='text' name='enterscore"+continuething+"' id='score'>";
+            cell4.innerHTML = "<input onkeyup='addscoreagain()' type='text' name='enterscore"+continuething+"' id='score'>"; 
+            cell5.innerHTML = "<input onkeyup='addscoreagain()' type='text' name='enterscore"+continuething+"' id='score'>";
+            cell6.innerHTML = "<input onkeyup='addscoreagain()' type='text' name='enterscore"+continuething+"' id='score'>";
+            cell7.innerHTML = "<input onkeyup='addscoreagain()' type='text' name='enterscore"+continuething+"' id='score'>";
+            cell8.innerHTML = "<output name='finalscore"+continuething+"' id='total"+continuething+"'></output>";
         
-        ++figurecount;
+        
     }
+    ++continuething;
+    alert(continuething);
 }
 
 //if I use the add row got to figure out how to change this
@@ -91,20 +93,37 @@ function addscore() {
     var numberofcellsrows =  document.getElementById("valueID").value;
     var amount = parseInt(numberofcellsrows);
    
-    
-        
-            for(var explorerow = 0; explorerow < amount; ++explorerow)
+    for(var explorerow = 0; explorerow < amount; ++explorerow)
+    {
+        var arr = document.getElementsByName("enterscore"+explorerow); 
+        var tot = 0;
+        for (var grabint = 0; grabint < arr.length; ++grabint) 
             {
-                var arr = document.getElementsByName("enterscore"+explorerow); 
-                var tot = 0;
-                for (var grabint = 0; grabint < arr.length; ++grabint) 
-                    {
-                        if(parseFloat(arr[grabint].value))
-                        tot += parseFloat(arr[grabint].value);
-                    }
-                document.getElementById('total'+explorerow).value = tot;
-            } 
-    }
+                if(parseFloat(arr[grabint].value))
+                tot += parseFloat(arr[grabint].value);
+            }
+        document.getElementById('total'+explorerow).value = tot;
+    } 
+}
+
+//need to figure out logic to add row
+function addscoreagain() {
+    var numberofcellsrows =  document.getElementById("valueID").value;
+    var real = parseInt(numberofcellsrows);
+    var amount = real + 1;
+   
+    for(var explorerow = amount; explorerow < amount+1; ++explorerow)
+    {
+        var arr = document.getElementsByName("enterscore"+explorerow); 
+        var tot = 0;
+        for (var grabint = 0; grabint < arr.length; ++grabint) 
+            {
+                if(parseFloat(arr[grabint].value))
+                tot += parseFloat(arr[grabint].value);
+            }
+        document.getElementById('total'+explorerow).value = tot;
+    } 
+}
 
 
 function highlow(arr0, arr1, arr2, arr3, arr4){

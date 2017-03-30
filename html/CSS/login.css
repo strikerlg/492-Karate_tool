@@ -1,147 +1,67 @@
-/*-----------------------------Login popup box-------------------*/
+/*need to mess with the look of it*/
+/*need to change the opacity of the buttons*/
 
-/* Overlay when Modal is open */
-#lean_overlay {
-    position: fixed;
-    z-index:100;
-    top: 0px;
-    left: 0px;
-    height:100%;
-    width:100%;
-    background: #000;
-    display: none;
+h3{
+font-size:18px;
+text-align:center;
+text-shadow:1px 0px 3px gray;
 }
 
-/* Modal box or Popup box */
-.popupContainer{
-	position:absolute;
-	width:330px;
-	height: auto;
-	left:45%;
-	top:80px;
-	background: #FFF;
-}
-
-#modal_trigger  {
-    margin: 100px auto;
-     width: 100px;
-     display: block;
-}
-
-.btn  {
-    padding: 10px 20px;
-     background:  #F4F4F2;
-}
-
-.btn_red  {
-    background:  #ED6347;
-     color:  #FFF;
-}
-
-.btn:hover  {
-    background:  #E4E4E2;
-}
-
-.btn_red:hover  {
-    background:  #C12B05;
-}
-
-a.btn  {
-    color: #666;
-     text-align:  center;
-     text-decoration:  none;
-}
-
-a.btn_red  {
-    color:  #FFF;
-}
-
-.one_half  {
-    width: 50%;
-     display:  block;
-     float: left;
-}
-
-.one_half.last  {
-    width: 45%;
-     margin-left: 5%;
-}
-
-/* Popup Styles*/
-.popupHeader  {
-    font-size: 16px;
-     text-transform:  uppercase;
-}
-
-.popupHeader  {
-    background: #F4F4F2;
-     position: relative;
-     padding: 10px 20px;
-     border-bottom: 1px solid #DDD;
-     font-weight: bold;
-}
-
-.popupHeader .modal_close  {
-    position:  absolute;
-     right:  0;
-     top: 0;
-     padding: 10px 15px;
-     background: #E4E4E2;
-     cursor:  pointer;
-     color: #aaa;
-     font-size: 16px;
-}
-
-.popupBody  {
-    padding: 20px;
-}
-
-/* User Login Form */
-.user_login  {
-    display:  none;
-}
-
-.user_login label  {
-    display:  block;
-     margin-bottom: 5px;
-}
-
-.user_login input[type="text"],  .user_login input[type="email"],  .user_login input[type="password"]  {
-    display:  block;
-     width: 90%;
-     padding:  10px;
-     border: 1px solid #DDD;
-     color: #666;
-}
-
-.user_login input[type="checkbox"]  {
-    float: left;
-     margin-right: 5px;
-}
-
-.user_login input[type="checkbox"]+label  {
-    float: left;
-}
-
-
-.user_login .checkbox  {
-    margin-bottom:  10px;
-     clear:  both;
-     overflow:  hidden;
-}
-
-.forgot_password  {
-    display: block;
-     margin:  20px 0 10px;
-     clear:  both;
-     overflow:  hidden;
-     text-decoration:  none;
-     color: #ED6347;
+.form{
+border-radius:2px;
+padding:20px 30px;
+box-shadow:0 0 15px;
+font-size:14px;
+font-weight:bold;
+width:350px;
+margin:20px 250px 0 35px;
+float:left;
 }
 
 
 
+#username,#password,#loginbtn,#cancel{
+width:100%;
+height:35px;
+margin-top:5px;
+border:1px solid #999;
+border-radius:3px;
+padding:5px;
+}
 
+input[type=button]{
+background-color:#222;
+border:1px solid white;
+font-family: 'Fauna One', serif;
+font-Weight:bold;
+font-size:18px;
+color:white;
+width:49%;
+}
 
+#logindiv{
+opacity:0.92;
+position: absolute;
+top: 0px;
+left: 0px;
+height: 100%;
+width: 100%;
+background: #000;
+display: none;
+}
 
-/*------------------end of login popup box----------------------------*/
+#login,#contact{
+width:350px;
+margin:0px;
+background-color:white;
+font-family: 'Fauna One', serif;
+position: relative;
+border: 5px solid #FFBA2A;
+}
+
+#login{
+left: 50%;
+top: 50%;
+margin-left:-210px;
+margin-top:-158px;
+}

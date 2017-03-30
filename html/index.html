@@ -3,14 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-<!--    work in progress-->
-    <script type="text/javascript" src="js/modal.js"> $("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });</script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!--    -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="CSS/stylesheet.css"/>
-    <link rel="stylesheet" type="text/css" href="CSS/login.css"/>
     <link rel="stylesheet" type="text/css" href="fonts/fonts.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/login.css">
     <title>Home Page- Karate Utility</title>
 </head>
 
@@ -22,41 +20,37 @@
     <div class="wrapper1">
     <h1>Karate Tournament Utility</h1>
     
-<!--    work in progress-->
-<!--   this is the login form I am working on -->
-<!--    -->
-<!--    -->
-<!--    need to mess with the css for the login trigger-->
-    <a id="login_trigger" href="#login">admin login</a>
+
+    <a id="login_trigger" href="#">admin login</a>
         
-    <form id="login" class="popupContainer" style="display:none;" action="php/login.php">
-        <header class="popupHeader">
-            <span class="header_title">Admin Login</span>
-            <span class="modal_close"><i class="fa fa-times"></i></span>
-        </header>
-        
-        <section class="popupBody">
-            <div class="user_login">
-            <form>
-                <label for="username">Username</label><input type="text"><br>
-                <label>Password</label><input type="password"><br> 
-                <div class="checkbox">
-                    <input id="remember" type="checkbox"><label for="remember">Remember me on this computer</label>
-                </div>
-                <div class="action_btns">
-                    <div class="one_half last">
-                        <a class="btn btn_red" href="#">Login</a>
-                    </div>
-                </div>
+<!--    login info below-->
+        <div id="logindiv">
+            <form class="form" action="#" id="login">
+                <h3>Login</h3>
+                <hr/><br/>
+                <label>Username:</label>
+                <br/>
+                <input type="text" id="username" placeholder="username"/><br/>
+                <br/>
+                <label>password :</label>
+                <br/>
+                <input type="text" id="password" placeholder="***********"/><br/>
+                <br/>
+                <input type="radio" name="organization" value="TKA" id="radio">
+                TKA
+                <input type="radio" name="organization" value="PKC" id="radio">
+                PKC
+                <input type="radio" name="organization" value="AAU" id="radio">
+                AAU
+                <br/>
+                <input type="button" id="loginbtn" value="Login"/>
+                <input type="button" id="cancel" value="Cancel"/>
+                <br/>
             </form>
-            <a class="forgot_password"  href="#">Forgot password?</a>
-            </div>
-        </section>
-    </form>
-<!--    -->
-<!--    -->
-<!--    -->
-<!--    -->
+        </div>
+        
+<!--        ends-->
+        
     
     <div class="taskbar">
         <nav>
@@ -76,7 +70,7 @@
     
     <div class="article">
         <p>
-            This Karate tournament utility was built to ease the process of a karate tournament. It aims to take out human error and making data storage a lot eaiser. System admins will be appointed to trained users in every dojo that ends up using this system. Every action will be tracked if data is tampered with. These sepcific people will be trained in how to work the website and enter data into the database. The utility is also for the public. With public use everything except for the entering of data will work. So, please enjoy, have fun, and train hard. If any questions need to be answered, there is a contact page in the taskbar to be able to get ahold of me.</p>
+            This Karate tournament utility was built to ease the process of a karate tournament. It aims to take out human error and making data storage a lot easier. System admins will be appointed to trained users in every dojo that ends up using this system. Every action will be tracked if data is tampered with. These sepcific people will be trained in how to work the website and enter data into the database. The utility is also for the public. With public use everything except for the entering of data will work. So, please enjoy, have fun, and train hard. If any questions need to be answered, there is a contact page in the taskbar to be able to get ahold of me.</p>
     </div>
     
     <h3>To my Sensei</h3>

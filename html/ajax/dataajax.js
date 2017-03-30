@@ -3,6 +3,7 @@ $(document).ready(function() {
         var btnvalue = $(this).val();
         $.post('php/datagrab.php', 'clickBtnValue=' + $(this).val(), function(response) {
             var parsed = JSON.parse(response);
+            console.log(response);
             var fname = [];
             var lname = [];
             var dojo = [];
