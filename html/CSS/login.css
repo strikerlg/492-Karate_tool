@@ -1,6 +1,10 @@
 /*need to mess with the look of it*/
 /*need to change the opacity of the buttons*/
 
+#wrong{
+    color: red;
+}
+
 h3{
 font-size:18px;
 text-align:center;

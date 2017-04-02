@@ -1,4 +1,5 @@
 $(document).ready(function() { 
+    //need to put in comparisons for user error
     $('#addseason').click(function() {
         //grabbing winners
         var first = document.getElementById("first").innerHTML;

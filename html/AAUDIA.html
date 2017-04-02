@@ -14,12 +14,45 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="ajax/seasonupdateaaukumite.js" ></script>
     <script type="text/javascript" src="ajax/grabname.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/login.css">
+    <script type="text/javascript" src="js/hideaau.js"></script>
     <title>AAU Kumite</title>
 </head>
 
 <body>
     <div class="wrapper1">
      <h1 class="title">Karate Tournament Utility</h1>
+        <a id="login_trigger" href="#">admin login</a>
+        
+<!--    login info below-->
+        <div id="logindiv">
+            <form class="form" action="#" id="login">
+                <h3>Login</h3>
+                <hr/><br/>
+                <div id="wrong"></div>
+                <label>Username:</label>
+                <br/>
+                <input type="text" id="username" placeholder="username"/><br/>
+                <br/>
+                <label>password :</label>
+                <br/>
+                <input type="text" id="password" placeholder="***********"/><br/>
+                <br/>
+                <input type="radio" name="organization" value="TKA" id="radio">
+                TKA
+                <input type="radio" name="organization" value="PKC" id="radio">
+                PKC
+                <input type="radio" name="organization" value="AAU" id="radio">
+                AAU
+                <br/>
+                <input type="button" id="loginbtn" value="Login"/>
+                <input type="button" id="cancel" value="Cancel"/>
+                <br/>
+            </form>
+        </div>
+        
+<!--        ends-->
     
     
     <div class="taskbar">
