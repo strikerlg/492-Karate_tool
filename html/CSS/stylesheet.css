@@ -9,6 +9,20 @@
   padding: 0;
 }
 
+/*--------------index image---------*/
+
+#Sensei{
+    width: 30%;
+    height: auto;
+   position: relative;
+    left: 355px;
+}
+
+#imageholder{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 /*--------------Kanji1---------------*/
 
 .kanji1{
@@ -266,6 +280,33 @@ footer nav ul{
 /*    visibility: hidden;*/
 }
 
+/*------Tutorial List--------*/
+.listarea{
+    position: relative;
+    left: 200px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+#tutlist{
+    list-style: none;
+}
+
+.dashed{
+    list-style: none;
+    position: relative;
+    left: 50px;
+    margin-top: 20px;
+}
+
+ul.dashed > li {
+    text-indent: -5px;
+}
+
+ul.dashed > li:before{
+    content: "-";
+    text-indent: -5px;
+}
 
 
 

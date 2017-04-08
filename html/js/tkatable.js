@@ -1,109 +1,93 @@
 //function for making the tables on the click
 function maketable() {
-        $("#katatable tr:not(:first)").remove();
-        var count = 0;
-        var table = document.getElementById("katatable");
         var numberofrows = document.getElementById("valueID").value;
         var rowamount = parseInt(numberofrows);
-        
-        while (count < rowamount) 
-        {
-            var row = table.insertRow(1);
-            row.id = "tbody";
-            var cell1 = row.insertCell(0);
-            cell1.className = "celltable";
-            var cell2 = row.insertCell(1);
-            cell2.id = "celltable"+count;
-            var cell3 = row.insertCell(2);
-            cell3.className = "celltable";
-            var cell4 = row.insertCell(3);
-            cell4.className = "celltable";
-            var cell5 = row.insertCell(4);
-            cell5.className = "celltable";
-            var cell6 = row.insertCell(5);
-            cell6.className = "celltable";
-            var cell7 = row.insertCell(6);
-            cell7.className = "celltable";
-            var cell8 = row.insertCell(7);
-            cell8.className = "totalcolumn";
-            
-            cell1.innerHTML = "<input onkeyup='doname(this.value,this.id)' type='text' id='idnum"+count+"'>";
-            cell2.innerHTML = "<input type='text' id='name"+count+"'>";
-            cell3.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+count+"' id='score'>";
-            cell4.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+count+"' id='score'>"; 
-            cell5.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+count+"' id='score'>";
-            cell6.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+count+"' id='score'>";
-            cell7.innerHTML = "<input onkeyup='addscore()' type='text' name='enterscore"+count+"' id='score'>";
-            cell8.innerHTML = "<output name='finalscore"+count+"' id='total"+count+"'></output>";
-            
-            count = count + 1;
-        }
+        if(rowamount < 2 )
+            {
+                alert("Please enter more players.")
+            }
+        else
+            {
+                var count = 0;
+                var table = document.getElementById("katatable");
+                $("#katatable tr:not(:first)").remove();
+                while (count < rowamount) 
+                {
+                    var row = table.insertRow(1);
+                    row.id = "tbody";
+                    var cell1 = row.insertCell(0);
+                    cell1.className = "celltable";
+                    var cell2 = row.insertCell(1);
+                    cell2.id = "celltable"+count;
+                    var cell3 = row.insertCell(2);
+                    cell3.className = "celltable";
+                    var cell4 = row.insertCell(3);
+                    cell4.className = "celltable";
+                    var cell5 = row.insertCell(4);
+                    cell5.className = "celltable";
+                    var cell6 = row.insertCell(5);
+                    cell6.className = "celltable";
+                    var cell7 = row.insertCell(6);
+                    cell7.className = "celltable";
+                    var cell8 = row.insertCell(7);
+                    cell8.className = "totalcolumn";
+
+                    cell1.innerHTML = "<input onkeyup='doname(this.value,this.id)' type='text' id='idnum"+count+"'>";
+                    cell2.innerHTML = "<input type='text' id='name"+count+"'>";
+                    cell3.innerHTML = "<input onkeyup='addscore(this.value,this.id)' type='text' name='enterscore"+count+"' id='score1"+count+"'>";
+                    cell4.innerHTML = "<input onkeyup='addscore(this.value,this.id)' type='text' name='enterscore"+count+"' id='score2"+count+"'>"; 
+                    cell5.innerHTML = "<input onkeyup='addscore(this.value,this.id)' type='text' name='enterscore"+count+"' id='score3"+count+"'>";
+                    cell6.innerHTML = "<input onkeyup='addscore(this.value,this.id)' type='text' name='enterscore"+count+"' id='score4"+count+"'>";
+                    cell7.innerHTML = "<input onkeyup='addscore(this.value,this.id)' type='text' name='enterscore"+count+"' id='score5"+count+"'>";
+                    cell8.innerHTML = "<output name='finalscore"+count+"' id='total"+count+"'></output>";
+
+                    count = count + 1;
+                }
+            }
     }
 
-//fix problem is probably where it's being insterted
-function addrow(){
-    var tablecont = document.getElementById("katatable").getElementsByTagName('tbody')[0];
-    var rowvalue = document.getElementById("valueID").value;
-    var realrowvalue = parseInt(rowvalue);
-    var correctrow = realrowvalue + 1;
-    var continuething = correctrow;
-    
-    if(rowvalue == 0)
-    {
-        alert("Please make a table before adding rows.");
-    }
-    else
-    {
-        var rowadd = tablecont.insertRow(tablecont.rows.length);
-            
-            var cell1 = rowadd.insertCell(0);
-            var cell2 = rowadd.insertCell(1);
-            var cell3 = rowadd.insertCell(2);
-            
-            var cell4 = rowadd.insertCell(3);
-            
-            var cell5 = rowadd.insertCell(4);
-            
-            var cell6 = rowadd.insertCell(5);
-            
-            var cell7 = rowadd.insertCell(6);
-            
-            var cell8 = rowadd.insertCell(7);
-            
-        
-            cell1.innerHTML = "<input onkeyup='doname(this.value,this.id)' type='text' id='idnum"+continuething+"'>";
-            cell2.innerHTML = "<input type='text' id='name"+continuething+"'>";
-            cell3.innerHTML = "<input onkeyup='addscoreagain()' type='text' name='enterscore"+continuething+"' id='score'>";
-            cell4.innerHTML = "<input onkeyup='addscoreagain()' type='text' name='enterscore"+continuething+"' id='score'>"; 
-            cell5.innerHTML = "<input onkeyup='addscoreagain()' type='text' name='enterscore"+continuething+"' id='score'>";
-            cell6.innerHTML = "<input onkeyup='addscoreagain()' type='text' name='enterscore"+continuething+"' id='score'>";
-            cell7.innerHTML = "<input onkeyup='addscoreagain()' type='text' name='enterscore"+continuething+"' id='score'>";
-            cell8.innerHTML = "<output name='finalscore"+continuething+"' id='total"+continuething+"'></output>";
-        
-        
-    }
-    ++continuething;
-    alert(continuething);
+
+//needed to change up the function so it didn't mess with namegrab.php
+//right now it's not doing that messed up thing where it messes with the ID
+//function for validating only numbers and decimal
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode != 190 &&(charCode < 48 || charCode > 57))) 
+        return false;
+    return true;
 }
 
 //if I use the add row got to figure out how to change this
 //the take out high and low is still bad
 //function for adding scores together
-function addscore() {
+function addscore(points,area) {
     var numberofcellsrows =  document.getElementById("valueID").value;
     var amount = parseInt(numberofcellsrows);
-   
-    for(var explorerow = 0; explorerow < amount; ++explorerow)
-    {
+    var added = points;
+    var parsefloatnum = parseFloat(added);
+    console.log(points);
+    console.log(area);
+    
+    if(isNumberKey(parsefloatnum) == false)
+        {
+            var socrearea = document.getElementById(area).value;
+            document.getElementById(area).value = socrearea.substr(0, socrearea.length -1);
+        }
+    else
+        {
+             for(var explorerow = 0; explorerow < amount; ++explorerow)
+            {
         var arr = document.getElementsByName("enterscore"+explorerow); 
         var tot = 0;
-        for (var grabint = 0; grabint < arr.length; ++grabint) 
+        
+            for (var grabint = 0; grabint < arr.length; ++grabint) 
             {
                 if(parseFloat(arr[grabint].value))
                 tot += parseFloat(arr[grabint].value);
             }
-        document.getElementById('total'+explorerow).value = tot;
-    } 
+            document.getElementById('total'+explorerow).value = tot;   
+            }    
+        }
 }
 
 //need to figure out logic to add row
@@ -149,6 +133,7 @@ function winnerplaces() {
         var numbofrows = document.getElementById("valueID").value;
         var rownumber = parseInt(numbofrows); 
         var arraytotals = new Array(rownumber);
+        var tablenames = [];
     
         for (var innercount = 0; innercount < rownumber; ++innercount)
         {
@@ -157,73 +142,101 @@ function winnerplaces() {
           arraytotals.push(answers);
         }
         arraytotals.sort(function(a, b){return b-a});
-
     
-    for (var outercount = 0; outercount < rownumber; ++outercount)
-            {
-                
-//                Grabbing totals. Used for comparing to the array.
-                var totalvalue = document.getElementById("total"+outercount).value;
-                var conversion = parseFloat(totalvalue);
-                var comparingvalue = conversion; 
-                
-            
-                if(arraytotals[0] == comparingvalue)
-                    {
-                        var firstplace = document.getElementById("name"+outercount);
-                        var firstplacevalue = firstplace.value;
-                        document.getElementById("first").innerHTML = firstplacevalue;
-                    }
-                
-                if(arraytotals[1] == comparingvalue)
-                    {
-                        var secondplace = document.getElementById("name"+outercount);
-                        var secondplacevalue = secondplace.value;
-                        document.getElementById("second").innerHTML = secondplacevalue;
-                    }
-                
-                if(arraytotals[2] == comparingvalue)
-                    {
-                        var thirdplace = document.getElementById("name"+outercount);
-                        var thirdplacevalue = thirdplace.value;
-                        document.getElementById("third").innerHTML = thirdplacevalue;
-                    }
-                
-                if(arraytotals[3] == comparingvalue)
-                    {
-                        var fourthplace = document.getElementById("name"+outercount);
-                        var fourthplacevalue = fourthplace.value;
-                        document.getElementById("fourth").innerHTML = fourthplacevalue;
-                    }
-            }
-    }
-
-
-//the look up function. To pull names from data tables
-function Lookup (number) 
-    {
-        var valuenumber = document.getElementById("valueID").value;
-        var rownumber = parseInt(valuenumber);
-        
-        
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    //seeing if there is any IDs that have been used more than once, unregistered IDS, or ids with 0
+    for(var namecount = 0; namecount < rownumber; ++namecount)
+        {
+            var quickstore = document.getElementById("name"+namecount).value;
+            tablenames.push(quickstore);
         }
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                for(var rowlocation = 0; rowlocation < rownumber; ++rowlocation)
+   
+    
+    var bad1 = "Cannot use ID 0";
+    var bad2 = "Not registered";
+    var bad3 = "Cannot use this ID";
+    var bad4 = "";
+    var bad5 = "Not an ID";
+    
+ 
+    var nogo = false;
+    for(var notgood = 0; notgood < rownumber; ++notgood)
+        {
+           
+            if( tablenames[notgood] == bad1)
                 {
-                    document.getElementById("name"+rowlocation).innerHTML = this.responseText;
+                    alert("One of the IDs are 0.");
+                    nogo = true;
+                    break;
                 }
-            }
-        };
-        xmlhttp.open("GET","getname.php?q="+number,true);
-        xmlhttp.send();
+            else if(tablenames[notgood] == bad2)
+                {
+                    alert("one of the IDs are ungregistered.");
+                    nogo = true;
+                    break;
+                }
+            else if(tablenames[notgood] == bad3)
+                {
+                    alert("Multiple same IDs.");
+                    nogo = true;
+                    break;
+                }
+            else if(tablenames[notgood] == bad4)
+                {
+                    alert("One of the table names are blank.");
+                    nogo = true;
+                    break;
+                }
+            else if(tablenames[notgood] == bad5)
+                {
+                    alert("One of the IDs is not an ID");
+                    nogo = true;
+                    break;
+                }
+            else if(tablenames[notgood] == tablenames[rownumber-1] && nogo==false)
+                {
+                    for (var outercount = 0; outercount < rownumber; ++outercount)
+                    {
+
+        //                Grabbing totals. Used for comparing to the array.
+                        var totalvalue = document.getElementById("total"+outercount).value;
+                        var conversion = parseFloat(totalvalue);
+                        var comparingvalue = conversion; 
+
+
+                        if(arraytotals[0] == comparingvalue)
+                            {
+                                var firstplace = document.getElementById("name"+outercount);
+                                var firstplacevalue = firstplace.value;
+                                document.getElementById("first").innerHTML = firstplacevalue;
+                            }
+
+                        if(arraytotals[1] == comparingvalue)
+                            {
+                                var secondplace = document.getElementById("name"+outercount);
+                                var secondplacevalue = secondplace.value;
+                                document.getElementById("second").innerHTML = secondplacevalue;
+                            }
+
+                        if(arraytotals[2] == comparingvalue)
+                            {
+                                var thirdplace = document.getElementById("name"+outercount);
+                                var thirdplacevalue = thirdplace.value;
+                                document.getElementById("third").innerHTML = thirdplacevalue;
+                            }
+
+                        if(arraytotals[3] == comparingvalue)
+                            {
+                                var fourthplace = document.getElementById("name"+outercount);
+                                var fourthplacevalue = fourthplace.value;
+                                document.getElementById("fourth").innerHTML = fourthplacevalue;
+                            }
+                    }
+                }
+        }
+    
     }
+
+
 
 
 

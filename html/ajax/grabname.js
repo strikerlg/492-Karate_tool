@@ -1,5 +1,4 @@
 //for TKAcal & PKCcal. AAUCAL uses kumite format
-//making some big changes have back up
 function doname(ID,place){
     var idnumber = parseInt(ID);
     
@@ -8,12 +7,11 @@ function doname(ID,place){
     var league = str[0];
     var fightstyle = str[1];
     
+    var contestantnumber = parseInt(ID);
+    
     
   
     var thenum = place.match(/\d+/)[0];
-    
-    console.log(ID);
-    console.log(idnumber);
     
             //changed
             if(ID == "")
@@ -28,6 +26,19 @@ function doname(ID,place){
                             document.getElementById("name"+thenum).value = "";
                             document.getElementById("name"+thenum).disabled = false;
                         }   
+                }
+            else if(isNumber(contestantnumber) == false)
+                {
+                    if(fightstyle == "Kumite" || league == "AAU")
+                        {
+                            document.getElementById("cont"+thenum).value = "Not an ID";
+                            document.getElementById("cont"+thenum).disabled = true;
+                        }
+                    else
+                        {
+                            document.getElementById("name"+thenum).value = "Not an ID";
+                            document.getElementById("name"+thenum).disabled = true;
+                        }     
                 }
             else{
                     $.post('php/namegrab.php', 'IDNAME='+idnumber+'&league='+league, function(name) {
@@ -59,39 +70,51 @@ function doname(ID,place){
                                     storage.push(holder);
                                 }
                         }
-                        var position = place.match(/\d+/)[0];
-                        storage.splice(position,1);
-                        console.log(storage);
+
 
                     if(fightstyle == "Kumite" || league == "AAU")
                         {
                         
                                     //|| ID == ""
-                                    if(ID == 0 )
+                                    if(ID == 0)
                                         {
                                             document.getElementById("cont"+thenum).value = "Cannot use ID 0";
                                             document.getElementById("cont"+thenum).disabled = true;
                                         }
+                                    else if(firstn == undefined)
+                                        {
+                                            document.getElementById("cont"+thenum).value = "Not registered";
+                                            document.getElementById("cont"+thenum).disabled = true;
+                                        }
                                     else
                                         {
-                                            if(ID == storage[0])
+                                            for(var arrayrun = 0; arrayrun < count; ++ arrayrun)
+                                                {
+                                                    if(ID == storage[arrayrun])
+                                                        {
+                                                            var position = arrayrun;
+                                                        }
+                                                }
+                                            
+                                            storage.splice(position,1);        
+                                         
+                                            for(var findmatch = 0; findmatch < count; ++findmatch)
+                                                {
+                                                    if(ID == storage[findmatch])
                                                     {
                                                         document.getElementById("cont"+thenum).value = "Cannot use this ID";
                                                         document.getElementById("cont"+thenum).disabled = true;
+                                                        break;
                                                     }
-                                            else if(firstn == undefined)
-                                                {
-                                                    document.getElementById("name"+thenum).value = "Not registered";
-                                                    document.getElementById("name"+thenum).disabled = true;
-                                                }   
-                                                else
+                                                else if(storage[findmatch] == storage[count])
                                                     {
                                                         document.getElementById("cont"+thenum).value = firstn+' '+lastn;
                                                         document.getElementById("cont"+thenum).disabled = true;
-                                                    }     
-                                            
-                                            storage = [];
-                                        }
+                                                    }
+
+                                                }
+                                        } 
+                                    
                         }
                     else
                         {
@@ -108,25 +131,43 @@ function doname(ID,place){
                                         }
                                     else
                                         {
+                                            for(var arrayrun = 0; arrayrun < count; ++ arrayrun)
+                                                {
+                                                    if(ID == storage[arrayrun])
+                                                        {
+                                                            var position = arrayrun;
+                                                        }
+                                                }
                                             
-                                                if(ID == storage[0])
+                                            storage.splice(position,1);        
+                                         
+                                            for(var findmatch = 0; findmatch < count; ++findmatch)
+                                                {
+                                                    if(ID == storage[findmatch])
                                                     {
                                                         document.getElementById("name"+thenum).value = "Cannot use this ID";
                                                         document.getElementById("name"+thenum).disabled = true;
+                                                        break;
                                                     }
-                                                else
+                                                else if(storage[findmatch] == storage[count])
                                                     {
                                                         document.getElementById("name"+thenum).value = firstn+' '+lastn;
                                                         document.getElementById("name"+thenum).disabled = true;
-                                                    }     
-                                            
-                                            storage = [];
-                                            
+                                                    }
+
+                                                }
                                         }   
                         }   
 
                     });
                 }
-        
     
+    
+}
+
+function isNumber(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
 }

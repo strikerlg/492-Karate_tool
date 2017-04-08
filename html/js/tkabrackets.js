@@ -27,7 +27,7 @@ function generate() {
                     var cell1 = row.insertCell(0);
                     var cell2 = row.insertCell(1);
 
-                    cell1.innerHTML = "<input onkeyup='doname(this.value,this.id)' type='number' id='idnumber"+count+"'>";
+                    cell1.innerHTML = "<input onkeyup='doname(this.value,this.id)' type='text' id='idnumber"+count+"'>";
                     cell2.innerHTML = "<input type='text' id='cont"+count+"'>";
 
                     count = count + 1;
@@ -55,19 +55,47 @@ function shuffle(array) {
   return array;
 }
 
-//alert still won't go if I don't have anything in the input
 //will have to go back into css and change some things.
 //bracket area - 32 players
 function create() {
     var players = document.getElementById("contestantvalue").value;
     var contplayers = parseInt(players);
-
     
+    var bad1 = "Cannot use ID 0";
+    var bad2 = "Not registered";
+    var bad3 = "Cannot use this ID";
+    var bad4 = "";
+    var bad5 = "Not an ID";
+    
+    var namerstorageholder = [];
+    
+    for(var p = 0; p < contplayers; ++p)
+        {
+            var holder = document.getElementById("cont"+p).value;
+            namerstorageholder.push(holder);
+        }
+    
+    
+    
+    var torf = false;
+    for(var find = 0; find < contplayers; ++find)
+        {
+            if(namerstorageholder[find] == bad1 || namerstorageholder[find] == bad2 || namerstorageholder[find] == bad3 || namerstorageholder[find] == bad4 || namerstorageholder[find] == bad5 )
+            {
+                torf = true;
+                break;
+            }
+        }
+    if(torf == true)
+        {
+            alert("One of the IDs are wrong.");
+        }
+    else{
     if (contplayers < 2 || contplayers == "")
         {
             alert("Please enter players.");
         }
-        else if(contplayers <= 16)
+     else if(contplayers <= 16)
         {
             //might need to add &nbsp;
             var area = document.getElementById("bracket");
@@ -87,6 +115,7 @@ function create() {
             place.innerHTML = verylarge;
             placename();
         }
+    }
    
 }
 
