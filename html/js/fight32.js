@@ -106,7 +106,7 @@ function fight32(){
                                 var winner2 = document.getElementById("second");
                                 winner.innerHTML = firstplace;
                                 winner2.innerHTML = secondplace;
-                                done();
+                                clearboxes();
                             }
                             else
                             {
@@ -146,7 +146,7 @@ function fight32(){
                                 var winner2 = document.getElementById("second");
                                 winner = firstplace;
                                 winner2 = secondplace;
-                                done();
+                                clearboxes();
                             }
                             if(grabnext2 == blank)
                                     {
@@ -2147,13 +2147,10 @@ function loser32map()
     
 }
 
-//fix
+
 function loser32layout()
 {
     
-    //testing area
-//    var grabfourth = document.getElementById("fourthbox");
-//    grabfourth.innerHTML = loserstorage;
     
     var losers = document.getElementById("contestantvalue").value;
 	var losernumber = parseInt(losers);
@@ -2303,7 +2300,7 @@ function loser32(){
                                 var winner2 = document.getElementById("second");
                                 winner.innerHTML = firstplace;
                                 winner2.innerHTML = secondplace;
-                                done();
+                                clearboxes();
                             }
                             else
                             {
@@ -2343,7 +2340,7 @@ function loser32(){
                                 var winner2 = document.getElementById("second");
                                 winner = firstplace;
                                 winner2 = secondplace;
-                                done();
+                                clearboxes();
                             }
                             if(grabnext2 == blank)
                                     {

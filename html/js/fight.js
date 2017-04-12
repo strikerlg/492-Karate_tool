@@ -93,7 +93,7 @@ function fight16(){
                                 var winner2 = document.getElementById("second");
                                 winner.innerHTML = firstplace;
                                 winner2.innerHTML = secondplace;
-                                done();
+                                clearboxes();
                             }
                             else
                             {
@@ -133,7 +133,7 @@ function fight16(){
                                 var winner2 = document.getElementById("second");
                                 winner = firstplace;
                                 winner2 = secondplace;
-                                done();
+                                clearboxes();
                             }
                             if(grabnext2 == blank)
                                     {
@@ -1159,7 +1159,7 @@ function loserfight()
                                 var winner2 = document.getElementById("third");
                                 winner.innerHTML = secondplace ;
                                 winner2.innerHTML = thirdplace;
-//                                done();
+                                clearboxes();
                             }
                             else
                             {
@@ -1199,7 +1199,7 @@ function loserfight()
                                 var winner2 = document.getElementById("third");
                                 winner.innerHTML = secondplace ;
                                 winner2.innerHTML = thirdplace;
-//                                done();
+                                clearboxes();
                             }
                             if(grabnext2 == blank)
                                     {
@@ -1218,7 +1218,7 @@ function loserfight()
                                     }
                         }
                 }
-            //fight 2: loser2 loser3  not finished empty next round  
+            //fight 2: loser2 loser3    
             else if (compare3 == loser3 &&  compare4 == loser4)
                 {
                     var secondfightval1 = document.getElementById("score3").value;
@@ -1711,10 +1711,12 @@ function loserfight()
                                             if( get15pos == get0pos )
                                                 {
                                                     fourthplacewin.innerHTML = get1pos;
+                                                    clearboxes();
                                                 }
                                             else
                                                 {
                                                     fourthplacewin.innerHTML = get0pos;
+                                                    clearboxes();
                                                 }
                                         }
                                     else
@@ -2069,10 +2071,12 @@ function loserfight()
                                             if(get23pos == get15pos)
                                                 {
                                                     fourthplacewinner.innerHTML = get16pos;
+                                                    clearboxes();
                                                 }
                                             else
                                                 {
                                                     fourthplacewinner.innerHTML = get15pos;
+                                                    clearboxes();
                                                 }
                                         }
                                     else
@@ -2243,7 +2247,7 @@ function loserfight()
                         }
                 }
             //round4
-            //fight15: loser27 28 last fight and go into loser bracket 
+            //fight15: loser27 28 
             else if(compare3 == loser27 && compare4 == loser28)
                 {
                     var fight151 = document.getElementById("score3").value;
@@ -2385,11 +2389,13 @@ function fourth(){
             var fourthwin = document.getElementById("fighter5").innerHTML;
             var fourthplace = document.getElementById("fourth");
             fourthplace.innerHTML = fourthwin;
+            clearboxes();
         }
     else
         {
             var fourthwin = document.getElementById("fighter6").innerHTML;
             var fourthplace = document.getElementById("fourth");
             fourthplace.innerHTML = fourthwin;
+            clearboxes();
         }
 }

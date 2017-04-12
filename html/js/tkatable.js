@@ -47,12 +47,12 @@ function maketable() {
     }
 
 
-//needed to change up the function so it didn't mess with namegrab.php
+//needed to change up the function so it didn't mess with namegrab.php/grabname.js
 //right now it's not doing that messed up thing where it messes with the ID
 //function for validating only numbers and decimal
 function isNumberKey(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode
-    if (charCode > 31 && (charCode != 190 &&(charCode < 48 || charCode > 57))) 
+    if (charCode > 31 && (charCode != 190 &&(charCode < 48 || charCode > 57)&&(charCode < 96 || charCode > 105)&& charCode != 110)) 
         return false;
     return true;
 }
@@ -88,25 +88,6 @@ function addscore(points,area) {
             document.getElementById('total'+explorerow).value = tot;   
             }    
         }
-}
-
-//need to figure out logic to add row
-function addscoreagain() {
-    var numberofcellsrows =  document.getElementById("valueID").value;
-    var real = parseInt(numberofcellsrows);
-    var amount = real + 1;
-   
-    for(var explorerow = amount; explorerow < amount+1; ++explorerow)
-    {
-        var arr = document.getElementsByName("enterscore"+explorerow); 
-        var tot = 0;
-        for (var grabint = 0; grabint < arr.length; ++grabint) 
-            {
-                if(parseFloat(arr[grabint].value))
-                tot += parseFloat(arr[grabint].value);
-            }
-        document.getElementById('total'+explorerow).value = tot;
-    } 
 }
 
 

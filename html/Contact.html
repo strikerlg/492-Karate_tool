@@ -3,11 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="CSS/stylesheet.css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="fonts/fonts.css"/>
     <script type="text/javascript" src="js/login.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/login.css">
+<!--    <script type="text/javascript" src="js/email.js"></script>-->
     <title>Contact Page</title>
 </head>
 
@@ -62,23 +64,37 @@
     <h3 class="Header">How to get ahold of me</h3>
     
     
-    <div class="article">
+    <div class="article" id="contactart">
         <p>
        If one is trying to get ahold of me for making corrections, question, or anything else that pertains to this website, please fill out the bottom information. Leave your email address and the question you have for me.
-        I should get back to you within the next 48 hours. If you figured out said question, please shoot another email at me to say that you fixed it. 
+            I should get back to you within the next 48 hours. If you figured out said question, please shoot another email at me to say that you fixed it. Go ahead and fill out the form, then click send. This should bring up your default email from there.
+        </p> 
     </div>
     
-    
-    
-    
-    
-    <section class="contact">
-        <form action="mailto:zach.alber@myemail.indwes.edu" method="post" enctype="text/plain">
-            <h5>E-Mail:<input type="text" name="e-mail" size="25" maxlength="316"></h5>
-            <h5>Question(s):<input type="text" name="questions" size="118" maxlength="316"></h5>
-            <input type="submit" value="Send"><input type="reset" value="Reset">    
-        </form>    
-    </section>
+   
+        
+    <div id="contactformdiv">
+<!--
+            <h5>Name:</h5><input type="text" name="name" id="name1" maxlength="316">
+            <h5>E-Mail:</h5><input type="text" name="email" id="email1" maxlength="316">
+            <h5>Question(s):</h5><textarea name="questions" id="message1"></textarea>
+            <br>
+            <button class="button" id="submitform" >Submit</button>
+            <button class="button" id="resetfrm">Reset</button>        
+-->     
+         <h4 id="contactemailus">Email us here!</h4>
+        
+        <form action="mailto:karatetool@gmail.com" method="post" enctype="text/plain" id="contactform">
+            <label>Name:</label><input type="text" name="name">
+            <br>
+            <label>E-mail:</label><input type="text" name="mail">
+            <br>
+            <label>Question/Message:</label><br><textarea name="message"></textarea>
+            <br>
+            <input type="submit" value="Send">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
     
     <footer>
         <nav>

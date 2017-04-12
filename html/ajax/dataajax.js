@@ -45,7 +45,7 @@ $(document).ready(function() {
             
             if(btnvalue == "tkakata" || btnvalue == "pkckata" || btnvalue == "aaukata")
                 {
-                    var tablestart = '<table border="1px" id="seasontable"><tr><td>Place</td><td>First Name</td><td>Last Name</td><td>Dojo</td><td>Points</td></tr></table>';
+                    var tablestart = '<table id="seasontable"><tr><th>Place</th><th>First Name</th><th>Last Name</th><th>Dojo</th><th>Points</th></tr></table>';
                     $("#displayrank").html(tablestart);
                     
                     for(var t = 0; t < count; t++)
@@ -58,7 +58,7 @@ $(document).ready(function() {
                 }
             else
                 {
-                    var tablestart = '<table border="1px" id="seasontable"><tr><td>Place</td><td>First Name</td><td>Last Name</td><td>Dojo</td><td>Points</td></tr></table>';
+                    var tablestart = '<table id="seasontable"><tr><th>Place</th><th>First Name</th><th>Last Name</th><th>Dojo</th><th>Points</th></tr></table>';
                     $("#displayrank").html(tablestart);
                     
                     for(var t = 0; t < count; t++)

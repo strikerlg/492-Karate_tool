@@ -24,6 +24,14 @@ h3 {
     font-family: 'Open Sans', serif;
 }
 
+h4 {
+    font-family: 'Open Sans', serif;
+}
+
+h5 {
+    font-family: 'Open Sans', serif;
+}
+
 li a{
     font-family: 'Open Sans', serif;
 }
@@ -47,6 +55,15 @@ label {
 table {
     font-family: 'Open Sans', serif;
 }
+
+form {
+    font-family: 'Open Sans', serif;
+}
+
+textarea {
+    font-family: 'Open Sans', serif;
+}
+
 
 .kanji1{
     font-family: hkgokukaikk; 

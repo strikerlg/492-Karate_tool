@@ -218,7 +218,11 @@ function loser(){
     
 }
 
-
+function clearboxes(){
+    document.getElementById("fightboxarea").innerHTML = " ";
+    document.getElementById("loserbox").innerHTML = " ";
+    document.getElementById("fourthbox").innerHTML = " ";
+}
 
 
 

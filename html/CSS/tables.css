@@ -88,6 +88,33 @@
 
 /*end of kumite winner tables*/
 
+/*==============Season tables===========*/
+#displayrank{
+    position: relative;
+    left: 20em;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+#seasontable{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
+#seasontable td, #seasontable th{
+    border: 1px solid black;
+    border-width: medium;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+#seasontable th{
+    background-color: #222;
+    color: #fff;
+}
+
+#seasontable td{
+    background: #fff;
+    text-align: center;
+}
 
 

@@ -9,7 +9,7 @@
   padding: 0;
 }
 
-/*--------------index image---------*/
+/*--------------index page---------*/
 
 #Sensei{
     width: 30%;
@@ -80,9 +80,11 @@
 
 /*-----------taskbar----------------*/
 /*need to fix for adjustment to different ratios*/
+/*
 .taskbar {
 
 }
+*/
 
 .taskbar nav ul{
     background-color: black;
@@ -113,10 +115,13 @@
 }
 
 #login_trigger{
-/*    text-align: center;*/
-    top: 3%;
-    right: 13%;
-/*    position: absolute*/
+    position: relative;
+    left: 58em; 
+}
+
+#signout{
+   position: relative;
+    left: 58em;   
 }
 
 /*----------------Headers----------*/
@@ -142,27 +147,22 @@ h3{
 /*----------------Body------------*/
 .article p{
     text-align: left;
-    padding: 0px 20px 60px 20px;
-    margin: 0 auto;
-    line-height: 2;
+    padding: 0px 50px 0px 50px;
+/*    margin: 0 auto;*/
+    line-height: 220%;
+    text-indent: 50px;
 }
 
 body {
-/*    background-image: url('../pics/karatedojo.jpg');*/
-/*    background-attachment: fixed;*/
     background-color: #FFF689;
     margin-left: 220px;
 	margin-right: 220px;
 	width: 1024px;
-
 }
 
 .wrapper1 {
     background-color: #CFFFB0;
-/* 	min-width: 1000px; */
-
-/*     margin-left: 220px; */
-/*     margin-right: 220px; */
+/*    height: 100%;*/
 }
 
 
@@ -230,10 +230,6 @@ footer nav ul{
     position: absolute;
 }
 
-/*what is this linked to?*/
-#resetbutton{
-    margin-top: 10px;
-}
 
 .button {
     background: #222;
@@ -255,9 +251,10 @@ footer nav ul{
 }
 
 #resetscore {
-    position: absolute;
-    margin-left: 35%;
-    margin-top: 10px;
+    position: relative;
+    left: 23em;
+/*    margin-left: 35%;*/
+/*    margin-top: 10px;*/
 }
 
 .centerbuttons {
@@ -267,7 +264,10 @@ footer nav ul{
 }
 
 #findwin {
-    margin-left: 30px;
+    position: relative;
+    bottom: 2em;
+    left: 44em;
+    
 }
 
 #checkbox {}
@@ -306,6 +306,39 @@ ul.dashed > li {
 ul.dashed > li:before{
     content: "-";
     text-indent: -5px;
+}
+
+/*----------Season page----------*/
+#seasonbuttons{
+    position: relative;
+    left: 23em;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 50%;
+}
+
+#kumitebuttons{
+    position: relative;
+    right: 20px;
+    margin-top: 30px;
+}
+
+/*----------Contact page-------*/
+
+#contactformdiv{
+    position: relative;
+    left: 23em;
+    margin-bottom: 3em;
+}
+
+#contactart{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#contactemailus{
+    text-decoration: underline;
+    margin-bottom: 5px;
 }
 
 
