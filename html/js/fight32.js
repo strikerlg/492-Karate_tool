@@ -1066,7 +1066,13 @@ function fight32(){
                             loserstorage.push(loserft15);
                             var nextfight151 = document.getElementById("pos30").innerHTML;
                             var nextfight152 = document.getElementById("pos31").innerHTML;
-                            if( nextfight152 == blank)
+                            if (nextfight151 == blank)
+                            {
+                            	grabfirstplace = document.getElementById("first");
+                            	grabfirstplace.innerHTML = winnerft15;
+                            	loser32map();
+                            }
+                            else if( nextfight152 == blank)
                                 {
                                     var placepos30 = document.getElementById("pos30").innerHTML;
                                     var grab60 = document.getElementById("pos60");
@@ -1091,7 +1097,13 @@ function fight32(){
                             loserstorage.push(loserft15);
                             var nextfight151 = document.getElementById("pos30").innerHTML;
                             var nextfight152 = document.getElementById("pos31").innerHTML;
-                            if( nextfight152 == blank)
+                            if (nextfight151 == blank)
+                            {
+                            	grabfirstplace = document.getElementById("first");
+                            	grabfirstplace.innerHTML = winnerft15;
+                            	loser32map();
+                            }
+                            else if( nextfight152 == blank)
                                 {
                                     var placepos30 = document.getElementById("pos30").innerHTML;
                                     var grab60 = document.getElementById("pos60");
@@ -1219,8 +1231,8 @@ function fight32(){
                                 {
                                     if(nextfight172 == blank)
                                         {
-                                            var place47 = document.getElementById("pos47");
-                                            place47.innerHTML = nextfight171;
+                                            var place48 = document.getElementById("pos48");
+                                            place48.innerHTML = nextfight171;
                                             var grab46 = document.getElementById("pos46").innerHTML;
                                             var grab47 = document.getElementById("pos47").innerHTML;
                                             output1.innerHTML = grab46;
@@ -1253,8 +1265,8 @@ function fight32(){
                                 {
                                     if(nextfight172 == blank)
                                         {
-                                            var place47 = document.getElementById("pos47");
-                                            place47.innerHTML = nextfight171;
+                                            var place48 = document.getElementById("pos48");
+                                            place48.innerHTML = nextfight171;
                                             var grab46 = document.getElementById("pos46").innerHTML;
                                             var grab47 = document.getElementById("pos47").innerHTML;
                                             output1.innerHTML = grab46;
@@ -1601,8 +1613,8 @@ function fight32(){
                                 {
                                     if(nextfight222 == blank)
                                         {
-                                            var place52 = document.getElementById("pos52");
-                                            place52.innerHTML = nextfight221;
+                                            var place53 = document.getElementById("pos53");
+                                            place53.innerHTML = nextfight221;
                                             var grab46 = document.getElementById("pos46").innerHTML;
                                             var grab47 = document.getElementById("pos47").innerHTML;
                                             output1.innerHTML = grab46;
@@ -1635,8 +1647,8 @@ function fight32(){
                                 {
                                     if(nextfight222 == blank)
                                         {
-                                            var place52 = document.getElementById("pos52");
-                                            place52.innerHTML = nextfight221;
+                                            var place53 = document.getElementById("pos53");
+                                            place53.innerHTML = nextfight221;
                                             var grab46 = document.getElementById("pos46").innerHTML;
                                             var grab47 = document.getElementById("pos47").innerHTML;
                                             output1.innerHTML = grab46;
@@ -1921,7 +1933,7 @@ function fight32(){
                 }
             //last fight round 2
             //fight 27 52 53
-            else if(compare1 == position52 && compare2 == positoin53)
+            else if(compare1 == position52 && compare2 == position53)
                 {
                     var fight271 = document.getElementById("score1").value;
                     var fight27val1  = parseInt(fight271);
@@ -1969,7 +1981,7 @@ function fight32(){
                             loserstorage.push(loserft28);
                             var nextfight281 = document.getElementById("pos56").innerHTML;
                             var nextfight282 = document.getElementById("pos57").innerHTML;
-                            if(nextfight261 == blank)
+                            if(nextfight281 == blank)
                                 {
                                     
                                     var grab58 = document.getElementById("pos58").innerHTML;
@@ -1982,7 +1994,7 @@ function fight32(){
                                 }
                             else
                                 {
-                                    if(nextfight262 == blank)
+                                    if(nextfight282 == blank)
                                         {
                                             var place59 = document.getElementById("pos59");
                                             place59.innerHTML = nextfight281;
@@ -2007,7 +2019,7 @@ function fight32(){
                             loserstorage.push(loserft28);
                             var nextfight281 = document.getElementById("pos56").innerHTML;
                             var nextfight282 = document.getElementById("pos57").innerHTML;
-                            if(nextfight261 == blank)
+                            if(nextfight281 == blank)
                                 {
                                     
                                     var grab58 = document.getElementById("pos58").innerHTML;
@@ -2020,7 +2032,7 @@ function fight32(){
                                 }
                             else
                                 {
-                                    if(nextfight262 == blank)
+                                    if(nextfight282 == blank)
                                         {
                                             var place59 = document.getElementById("pos59");
                                             place59.innerHTML = nextfight281;
@@ -2156,7 +2168,7 @@ function loser32layout()
 	var losernumber = parseInt(losers);
     var valloser = losernumber - 1;
     
-    //maybe shuffle
+    
     for(var loserposition = 0; loserposition < 16; ++loserposition)
         {
             var loserjail = loserstorage[loserposition];
@@ -3481,8 +3493,8 @@ function loser32(){
                                 {
                                     if(nextfight172 == blank)
                                         {
-                                            var place47 = document.getElementById("loser47");
-                                            place47.innerHTML = nextfight171;
+                                            var place48 = document.getElementById("loser48");
+                                            place48.innerHTML = nextfight171;
                                             var grab46 = document.getElementById("loser46").innerHTML;
                                             var grab47 = document.getElementById("loser47").innerHTML;
                                             output1.innerHTML = grab46;
@@ -3515,8 +3527,8 @@ function loser32(){
                                 {
                                     if(nextfight172 == blank)
                                         {
-                                            var place47 = document.getElementById("loser47");
-                                            place47.innerHTML = nextfight171;
+                                            var place48 = document.getElementById("loser48");
+                                            place48.innerHTML = nextfight171;
                                             var grab46 = document.getElementById("loser46").innerHTML;
                                             var grab47 = document.getElementById("loser47").innerHTML;
                                             output1.innerHTML = grab46;
@@ -3863,8 +3875,8 @@ function loser32(){
                                 {
                                     if(nextfight222 == blank)
                                         {
-                                            var place52 = document.getElementById("loser52");
-                                            place52.innerHTML = nextfight221;
+                                            var place53 = document.getElementById("loser53");
+                                            place53.innerHTML = nextfight221;
                                             var grab46 = document.getElementById("loser46").innerHTML;
                                             var grab47 = document.getElementById("loser47").innerHTML;
                                             output1.innerHTML = grab46;
@@ -3897,8 +3909,8 @@ function loser32(){
                                 {
                                     if(nextfight222 == blank)
                                         {
-                                            var place52 = document.getElementById("loser52");
-                                            place52.innerHTML = nextfight221;
+                                            var place53 = document.getElementById("loser53");
+                                            place53.innerHTML = nextfight221;
                                             var grab46 = document.getElementById("loser46").innerHTML;
                                             var grab47 = document.getElementById("loser47").innerHTML;
                                             output1.innerHTML = grab46;
@@ -4183,7 +4195,7 @@ function loser32(){
                 }
             //last fight round 2
             //fight 27 52 53
-            else if(compare1 == loser52 && compare2 == loseritoin53)
+            else if(compare1 == loser52 && compare2 == loser53)
                 {
                     var fight271 = document.getElementById("score3").value;
                     var fight27val1  = parseInt(fight271);
@@ -4231,7 +4243,7 @@ function loser32(){
                             loserstorage.push(loserft28);
                             var nextfight281 = document.getElementById("loser56").innerHTML;
                             var nextfight282 = document.getElementById("loser57").innerHTML;
-                            if(nextfight261 == blank)
+                            if(nextfight281 == blank)
                                 {
                                     
                                     var grab58 = document.getElementById("loser58").innerHTML;
@@ -4244,7 +4256,7 @@ function loser32(){
                                 }
                             else
                                 {
-                                    if(nextfight262 == blank)
+                                    if(nextfight282 == blank)
                                         {
                                             var place59 = document.getElementById("loser59");
                                             place59.innerHTML = nextfight281;
@@ -4269,7 +4281,7 @@ function loser32(){
                             loserstorage.push(loserft28);
                             var nextfight281 = document.getElementById("loser56").innerHTML;
                             var nextfight282 = document.getElementById("loser57").innerHTML;
-                            if(nextfight261 == blank)
+                            if(nextfight281 == blank)
                                 {
                                     
                                     var grab58 = document.getElementById("loser58").innerHTML;
@@ -4282,7 +4294,7 @@ function loser32(){
                                 }
                             else
                                 {
-                                    if(nextfight262 == blank)
+                                    if(nextfight282 == blank)
                                         {
                                             var place59 = document.getElementById("loser59");
                                             place59.innerHTML = nextfight281;
@@ -4423,12 +4435,12 @@ function loser32(){
                                     if(loser60pos == losbottop)
                                         {
                                             var losfight6 = document.getElementById("fighter6");
-                                            lostfight6.innerHTML = losbotbot;
+                                            losfight6.innerHTML = losbotbot;
                                         }
                                     else
                                         {
                                             var losfight6 = document.getElementById("fighter6");
-                                            lostfight6.innerHTML = losbottop;
+                                            losfight6.innerHTML = losbottop;
                                         }
                                 }    
                         }
@@ -4481,12 +4493,12 @@ function loser32(){
                                     if(loser60pos == losbottop)
                                         {
                                             var losfight6 = document.getElementById("fighter6");
-                                            lostfight6.innerHTML = losbotbot;
+                                            losfight6.innerHTML = losbotbot;
                                         }
                                     else
                                         {
                                             var losfight6 = document.getElementById("fighter6");
-                                            lostfight6.innerHTML = losbottop;
+                                            losfight6.innerHTML = losbottop;
                                         }
                                 }
                         }

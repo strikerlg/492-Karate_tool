@@ -1,5 +1,4 @@
-//global variable for loser storage
-var loserstorage = [];
+//took out loserstorage and put it in tkabrackets
 
 //the main function that will be running it all.
 function fight(){
@@ -67,7 +66,7 @@ function fight16(){
 
             
             
-            //first fight: pos0 pos1; if no next fight the guy wins; special is done; done
+            //first fight: pos0 pos1; if no next fight the guy wins; need to change it for if there are three players
             if(compare1 == position1 && compare2 == position2)
                 {
                     var firstfightval1 = document.getElementById("score1").value;
@@ -87,12 +86,23 @@ function fight16(){
                             //win automatically if no others
                             if(grabnext1 === blank)
                             {
+                            	var contamount = document.getElementById("contestantvalue").value;
+                            	var parseamount = parseInt(contamount);
+
                                 var firstplace = document.getElementById("pos16").innerHTML;
                                 var secondplace = document.getElementById("pos1").innerHTML;
                                 var winner = document.getElementById("first");
                                 var winner2 = document.getElementById("second");
+
                                 winner.innerHTML = firstplace;
                                 winner2.innerHTML = secondplace;
+
+                                if (parseamount == 3) 
+                                {
+                                	var thirdwinner = document.getElementById("third");
+                                	thirdwinner.innerHTML = loserstorage[0]; 
+                                }
+
                                 clearboxes();
                             }
                             else
@@ -127,12 +137,22 @@ function fight16(){
                             output2.innerHTML = grabnext2;
                              if(grabnext1 === blank)
                             {
+                            	var contamount = document.getElementById("contestantvalue").value;
+                            	var parseamount = parseInt(contamount);
+
                                 var firstplace = document.getElementById("pos16").innerHTML;
                                 var secondplace = document.getElementById("pos0").innerHTML;
                                 var winner = document.getElementById("first");
                                 var winner2 = document.getElementById("second");
-                                winner = firstplace;
-                                winner2 = secondplace;
+                                winner.innerHTML = firstplace;
+                                winner2.innerHTML = secondplace;
+
+
+                                if (parseamount == 3) 
+                                {
+                                	var thirdwinner = document.getElementById("third");
+                                	thirdwinner.innerHTML = loserstorage[0]; 
+                                }
                                 clearboxes();
                             }
                             if(grabnext2 == blank)
