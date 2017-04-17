@@ -1,5 +1,5 @@
 <?php
-
+    //this might be the way to combat sql injection. With the prepare, ? , and the execute array
     $org = $_POST['RADIO'];
 
     switch ($org) 
@@ -26,15 +26,17 @@ function TKA(){
 
     $dbh = new PDO('mysql:host=localhost;dbname=Karate_Tool_Admins', $user, $pass);
 
+    $sqlinsert = 'TKA';
 
-    $sth = $dbh->prepare("SELECT Username, Password, Organization, CASE WHEN Username='$usr' AND Password='$psd' THEN 'True' ELSE 'False' END AS Hasmember FROM Admins WHERE Organization='TKA'");
 
-    $sth->execute();
+    $sth = $dbh->prepare("SELECT Username, Password, Organization, CASE WHEN Username = ? AND Password = ? THEN 'True' ELSE 'False' END AS Hasmember FROM Admins WHERE Organization = ? ");
+
+
+    $sth->execute(array($usr, $psd, $sqlinsert));
     
     $result = $sth->fetchAll();
     
     echo json_encode($result);
-    
     
 
 
@@ -47,13 +49,14 @@ function PKC(){
     $psd = $_POST['PASSWORD'];
    $user = 'root'; 
     $pass = 'mickey456';
+    $sqlinsert = 'PKC';
 
     $dbh = new PDO('mysql:host=localhost;dbname=Karate_Tool_Admins', $user, $pass);
 
 
-    $sth = $dbh->prepare("SELECT Username, Password, Organization, CASE WHEN Username='$usr' AND Password='$psd' THEN 'True' ELSE 'False' END AS Hasmember FROM Admins WHERE Organization='PKC'");
+    $sth = $dbh->prepare("SELECT Username, Password, Organization, CASE WHEN Username = ? AND Password = ? THEN 'True' ELSE 'False' END AS Hasmember FROM Admins WHERE Organization = ? ");
 
-    $sth->execute();
+    $sth->execute(array($usr, $psd, $sqlinsert));
     
     $result = $sth->fetchAll();
     
@@ -71,13 +74,14 @@ function AAU(){
     $psd = $_POST['PASSWORD'];
    $user = 'root'; 
     $pass = 'mickey456';
+    $sqlinsert = 'AAU';
 
     $dbh = new PDO('mysql:host=localhost;dbname=Karate_Tool_Admins', $user, $pass);
 
 
-    $sth = $dbh->prepare("SELECT Username, Password, Organization, CASE WHEN Username='$usr' AND Password='$psd' THEN 'True' ELSE 'False' END AS Hasmember FROM Admins WHERE Organization='AAU'");
+    $sth = $dbh->prepare("SELECT Username, Password, Organization, CASE WHEN Username = ? AND Password = ? THEN 'True' ELSE 'False' END AS Hasmember FROM Admins WHERE Organization = ? ");
 
-    $sth->execute();
+    $sth->execute(array($usr, $psd, $sqlinsert));
     
     $result = $sth->fetchAll();
     
