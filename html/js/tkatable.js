@@ -85,26 +85,12 @@ function addscore(points,area) {
                 if(parseFloat(arr[grabint].value))
                 tot += parseFloat(arr[grabint].value);
             }
+            tot = Number((tot).toFixed(3));
             document.getElementById('total'+explorerow).value = tot;   
             }    
         }
 }
 
-
-function highlow(arr0, arr1, arr2, arr3, arr4){
-        var rowcount =  document.getElementById("valueID").value;
-        var amountrow = parseInt(rowcount);
-        var totalamount = 0;
-        
-        arr0 = 0;
-        arr4 = 0;
-        //used to find the right total row
-        for(var rightrow = 0; rightrow < amountrow; ++rightrow)
-            {
-                totalamount = arr0 + arr1 + arr2 + arr3 + arr4;
-                document.getElementById('total'+ rightrow).value = totalamount;
-            }
-}
 
 
 //function for finding the winners of the scores

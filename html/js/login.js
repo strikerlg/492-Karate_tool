@@ -86,6 +86,7 @@ $(document).ready(function(){
                     document.getElementById("login_trigger").id = "signout";
                     $('#logindiv').hide();
                     setTimeout(function() { alert("Successfully logged in!"); }, 500);
+                    setTimeout(function() { location.reload(); }, 700);
                 }
             else
                 {
@@ -103,6 +104,7 @@ $(document).ready(function(){
         $('#signout').html("admin login");
         $('#signout').attr("id", "login_trigger");
         setTimeout(function() { alert("Successfully signed out!"); }, 500);
+        setTimeout(function() { location.reload(); }, 500);
     });
     
 });

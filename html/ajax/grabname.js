@@ -33,11 +33,15 @@ function doname(ID,place){
                         {
                             document.getElementById("cont"+thenum).value = "Not an ID";
                             document.getElementById("cont"+thenum).disabled = true;
+                            var idarea = document.getElementById(place).value;
+            				document.getElementById(place).value = idarea.substr(0, idarea.length -1);
                         }
                     else
                         {
                             document.getElementById("name"+thenum).value = "Not an ID";
                             document.getElementById("name"+thenum).disabled = true;
+                            var idarea = document.getElementById(place).value;
+            				document.getElementById(place).value = idarea.substr(0, idarea.length -1);
                         }     
                 }
             else{
@@ -167,7 +171,7 @@ function doname(ID,place){
 
 function isNumber(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode
-    if (charCode > 31 && (charCode < 48 || charCode > 57))
+    if (charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 96 || charCode > 105))
         return false;
     return true;
 }

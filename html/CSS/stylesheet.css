@@ -14,11 +14,14 @@
 #Sensei{
     width: 30%;
     height: auto;
-   position: relative;
-    left: 355px;
+   /*position: relative;*/
+    /*left: 355px;*/
 }
 
 #imageholder{
+    /*position: relative;*/
+    /*left: 355px;   */
+    text-align: center;
     margin-top: 20px;
     margin-bottom: 30px;
 }
@@ -34,21 +37,21 @@
 
 
 #kanji11{
-    position: absolute;
+    position: fixed;
     top: 0em;
-    margin-left: -1em;
+    margin-left: -1.1em;
 }
 
 #kanji12{
-    position: absolute;
+    position: fixed;
     top: 2em;
-    margin-left: -1em;
+    margin-left: -1.1em;
 }
 
 #kanji13{
-    position: absolute;
+    position: fixed;
     top: 4em;
-    margin-left: -1em;
+    margin-left: -1.1em;
 }
 
 /*--------kanji2----------------*/
@@ -60,21 +63,21 @@
 }
 
 #kanji21{
-    position: absolute;
+    position: fixed;
     top: 0em;
-    margin-left: 1040px;
+    margin-left: 1030px;
 }
 
 #kanji22{
-    position: absolute;
+    position: fixed;
     top: 2em;
-    margin-left: 1040px;
+    margin-left: 1030px;
 }
 
 #kanji23{
-    position: absolute;
+    position: fixed;
     top: 4em;
-    margin-left: 1040px;
+    margin-left: 1030px;
 }
 
 
@@ -155,27 +158,31 @@ h3{
 
 body {
     background-color: #FFF689;
-    margin-left: 220px;
-	margin-right: 220px;
-	width: 1024px;
+    margin-left: 150px;
+	margin-right: 150px;
+	max-width: 2000px;
+    width: 1024px;
+    height: 100%;
 }
 
 .wrapper1 {
-    background-color: #CFFFB0;
-/*    height: 100%;*/
+    background-color: #fffcd6;
+    min-height: 100%;
+
 }
 
 
 
 
-/*-----------------footer--------------
+/*-----------------footer--------------*/
 /*fix for different ratios*/
 footer{
+/*    position:absolute;*/
+/*    bottom: 0;*/
     text-align: center;
     border-top-color: #FFBA2A; 
     border-top-width: 3px;
     border-top-style: solid;
-    
 }
 
 footer li{
@@ -223,11 +230,21 @@ footer nav ul{
     
 }
 
+/*?*/
 #katabutton{
    margin-bottom: 5px;
     top: 25%;
     right: 30%;
     position: absolute;
+}
+
+/*kumite reset button*/
+#resetbutton{
+    margin: 0px 0px 5px 4.5em; 
+}
+
+#bracketmaker{
+    margin: 3px 0px 5px 4.5em;
 }
 
 
@@ -250,40 +267,36 @@ footer nav ul{
  margin-top: 6px; 
 }
 
+.topbuttons input{
+    width: 40px;
+    text-align: center;
+}
+
 #resetscore {
-    position: relative;
-    left: 23em;
-/*    margin-left: 35%;*/
-/*    margin-top: 10px;*/
+    margin: 5px 0em 1em 35em; 
 }
 
 .centerbuttons {
     align-content: center;
-    padding-top: 20px;
+    margin-top: 20px;
     margin-left: 36%; 
 }
 
 #findwin {
-    position: relative;
-    bottom: 2em;
-    left: 44em;
-    
+    margin: 5px 0em 1em 35em; 
 }
 
-#checkbox {}
-
-#checklable {}
 
 #addseason{
     margin-left: 45.2%;
-    margin-top: 5%;
-/*    visibility: hidden;*/
+    margin-top: 2%;
+    margin-bottom: 10px;
 }
 
 /*------Tutorial List--------*/
 .listarea{
-    position: relative;
-    left: 200px;
+    text-align: left;
+    padding: 0px 50px 0px 50px;
     margin-top: 40px;
     margin-bottom: 30px;
 }
@@ -293,9 +306,9 @@ footer nav ul{
 }
 
 .dashed{
+    padding: 0px 0px 0px 10em;
     list-style: none;
-    position: relative;
-    left: 50px;
+    line-height: 220%;
     margin-top: 20px;
 }
 
@@ -308,26 +321,31 @@ ul.dashed > li:before{
     text-indent: -5px;
 }
 
+.pictut1{
+    margin-left: -200px;
+}
+
 /*----------Season page----------*/
 #seasonbuttons{
-    position: relative;
-    left: 23em;
+/*    position: relative;*/
+    margin-left: 23em;
     margin-top: 40px;
     margin-bottom: 40px;
     width: 50%;
 }
 
 #kumitebuttons{
-    position: relative;
-    right: 20px;
+/*    position: relative;*/
+    margin-left: -20px;
     margin-top: 30px;
 }
 
 /*----------Contact page-------*/
 
 #contactformdiv{
-    position: relative;
-    left: 23em;
+/*    position: relative;*/
+/*    left: 23em;*/
+    margin-left: 350px;
     margin-bottom: 3em;
 }
 
@@ -341,5 +359,62 @@ ul.dashed > li:before{
     margin-bottom: 5px;
 }
 
+#contactformdiv input[type=text]{
+    margin-left: 4px;
+    margin-bottom: 5px;
+}
 
+#contactformdiv textarea{
+    width: 17.2em;
+    height: 4em;
+    word-wrap: break-word;
+}
 
+/*----------Kumite Fight boxes----------*/
+#fightboxarea{
+    margin: 5px 0px 0px 10px;
+}
+#loserbox{
+    margin: 5px 0px 0px 10px;
+}
+#fourthbox{
+    margin: 5px 0px 0px 10px;
+}
+
+#fourthbox legend{
+    font-weight: bold;
+}
+
+#loserbox{
+    font-weight: bold;
+}
+
+#fightboxarea legend{
+    font-weight: bold;
+}
+
+fieldset {
+    padding-top: 4px;;
+    width: 200px;
+    border: solid;
+    background-color: #fff;
+}
+
+fieldset input{
+    margin-bottom: 5px;
+    margin-left: 4px;
+    width: 30px;
+}
+
+fieldset output{
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+fieldset output::after{
+    content: ":";
+}
+
+fieldset button{
+    margin-left: 5.5em;
+}

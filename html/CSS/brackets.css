@@ -25,7 +25,7 @@ li.game{
 }
 
   li.game.winner{
-    font-weight:bold;
+      ;
   }
   li.game span{
     float:right;
@@ -45,12 +45,13 @@ li.game{
 
 /*-----div bracket-----*/
 div #bracket{
-    margin-top: 50px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+div #loser{
+    margin-top: 40px;
     margin-bottom: 20px;
 }
 
 
-/*---------fightbox-------*/
-fieldset {
-    width: 20%;
-}

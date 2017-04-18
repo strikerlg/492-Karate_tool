@@ -1,3 +1,4 @@
+//this is for all kumite webpages
 //array that stores the names
 //global variable
 	var namestorage = [];
@@ -150,7 +151,7 @@ function preliminarymatch(){
 	else
 	{
 		var prelimarea = document.getElementById("fightboxarea");
-		var placeprelim = "<fieldset><legend>Preliminary Match</legend><output id='prefighter1'></output><input type='number' id='prescore1' min='0' value='0'><br><output id='prefighter2'></output><input type='number' id='prescore2' min='0' value='0'><button onclick='prefight()'>Score</button></fieldset>";
+		var placeprelim = "<fieldset><legend>Preliminary Match</legend><output id='prefighter1'></output><input type='number' id='prescore1' min='0' value='0'><br><output id='prefighter2'></output><input type='number' id='prescore2' min='0' value='0'><br><button class='button' onclick='prefight()'>Score</button></fieldset>";
 		prelimarea.innerHTML = placeprelim;
 		var fighterpre1 = document.getElementById("prefighter1");
 		var fighterpre2 = document.getElementById("prefighter2");
@@ -268,7 +269,7 @@ function placename(){
 function fightbox(){
     var divarea = document.getElementById("fightboxarea");
     divarea.innerHTML = " ";
-    var medium = "<fieldset><legend>Fightbox</legend><output id='fighter1'></output><input type='number' id='score1' min='0' value='0'><br><output id='fighter2'></output><input type='number' id='score2' min='0' value='0'><button onclick='fight()'>Score</button></fieldset>";
+    var medium = "<fieldset><legend>Fightbox</legend><output id='fighter1'></output><input type='number' id='score1' min='0' value='0'><br><output id='fighter2'></output><input type='number' id='score2' min='0' value='0'><br><button class='button' onclick='fight()'>Score</button></fieldset>";
     divarea.innerHTML = medium;
 
     var value1 = document.getElementById("pos0").innerHTML;
@@ -283,7 +284,7 @@ function loserbox(){
     var fightarea = document.getElementById("fightboxarea");
     fightarea.innerHTML = "";
     var loserboxarea = document.getElementById("loserbox");
-    var average = "<fieldset><legend>Second Fight</legend><output id='fighter3'></output><input type='number' id='score3' min='0' value='0'><br><output id='fighter4'></output><input type='number' id='score4' min='0' value='0'><button onclick='loserfight()'>Score</button></fieldset>";
+    var average = "<fieldset><legend>Second Fight</legend><output id='fighter3'></output><input type='number' id='score3' min='0' value='0'><br><output id='fighter4'></output><input type='number' id='score4' min='0' value='0'><br><button class='button' onclick='loserfight()'>Score</button></fieldset>";
     loserboxarea.innerHTML = average;
     
     
@@ -299,7 +300,7 @@ function fourthbox(){
     var loserfight = document.getElementById("loserbox");
     loserfight.innerHTML = "";
     var fourthboxs = document.getElementById("fourthbox");
-    var average = "<fieldset><legend>Fourth</legend><output id='fighter5'></output><input type='number' id='score5' min='0' value='0'><br><output id='fighter6'></output><input type='number' id='score6' min='0' value='0'><button onclick='fourth()'>Score</button></fieldset>";
+    var average = "<fieldset><legend>Fourth</legend><output id='fighter5'></output><input type='number' id='score5' min='0' value='0'><br><output id='fighter6'></output><input type='number' id='score6' min='0' value='0'><br><button class ='button' onclick='fourth()'>Score</button></fieldset>";
     fourthboxs.innerHTML = average;
 }
 

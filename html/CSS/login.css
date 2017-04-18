@@ -5,7 +5,7 @@
     color: red;
 }
 
-h3{
+#login h3{
 font-size:18px;
 text-align:center;
 text-shadow:1px 0px 3px gray;
@@ -43,9 +43,10 @@ color:white;
 width:49%;
 }
 
+/*changed position to fixed from absolute*/
 #logindiv{
-opacity:0.92;
-position: absolute;
+/*opacity:0.92;*/
+position: fixed;
 top: 0px;
 left: 0px;
 height: 100%;
